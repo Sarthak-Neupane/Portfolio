@@ -13,6 +13,7 @@
     "nuxt": "^3.2.3"
   },
   "dependencies": {
-    "@nuxt/image-edge": "^1.0.0-27968280.9739e4d"
+    "@nuxt/image-edge": "^1.0.0-27968280.9739e4d",
+    "three": "^0.150.1"
   }
 }
