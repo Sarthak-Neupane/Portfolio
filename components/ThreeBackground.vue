@@ -22,12 +22,45 @@ const props = defineProps({
 const threeElem = ref(null)
 const renderer = ref(null)
 
+const time = ref(0)
+const uProgress = ref(0)
+
+
+
+const vertexShader = `
+uniform float time;
+uniform float uProgress;
+varying vec2 vUv;
+varying vec3 vNormal;
+
+void main()
+{
+    vUv = uv;
+    vNormal = normal;
+    vec3 newPosition = position;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0 );
+}
+`
+
+const fragmentShader = `uniform float time;
+uniform float uProgress;
+uniform sampler2D uTexture;
+varying vec2 vUv;
+varying vec3 vNormal;
+
+
+void main ()
+{
+    gl_FragColor = vec4(vUv, 0., 1.);
+}`
+
+
 const aspect = computed(() => width.value / height.value)
 
 const scene = useScene()
 const camera = useCamera({
     cameraType: 'Perspective',
-    position: { x: 0, y: 0, z: 5 },
+    position: { x: 0, y: 0, z: 1 },
     fov: 75,
     aspect: aspect.value,
     near: 0.1,
@@ -36,11 +69,19 @@ const camera = useCamera({
 
 scene.add(camera)
 
-const geometry = new $three.BoxGeometry(1, 1, 1);
-const material = new $three.MeshBasicMaterial();
-material.color = new $three.Color(toNumber(props.color))
-const cube = new $three.Mesh(geometry, material);
-scene.add(cube)
+const geometry = new $three.PlaneBufferGeometry(0.5, 0.5, 100, 100);
+const material = new $three.ShaderMaterial({
+    side: $three.DoubleSide,
+    vertexShader: vertexShader,
+    fragmentShader: fragmentShader,
+    uniforms: {
+        time: time.value,
+        resolution: { value: new $three.Vector2(width.value, height.value) },
+        uProgress: uProgress.value
+    },
+});
+const mesh = new $three.Mesh(geometry, material);
+scene.add(mesh);
 
 const createRenderer = () => {
     if (threeElem.value) {
@@ -84,8 +125,10 @@ onMounted(() => {
 
 
 useRafFn(() => {
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
+    time.value += 0.01
     renderer.value.render(scene, camera)
 })
+
+
+
 </script>
