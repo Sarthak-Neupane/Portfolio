@@ -4,7 +4,7 @@
 </template>
 
 <script setup>
-import { useWindowSize, useDevicePixelRatio } from '@vueuse/core'
+import { useWindowSize, useDevicePixelRatio, useRafFn } from '@vueuse/core'
 
 const { $three } = useNuxtApp()  // plugins
 
@@ -26,8 +26,6 @@ const camera = useCamera({
     far: 1000,
 })
 
-
-
 scene.add(camera)
 
 const geometry = new $three.BoxGeometry(1, 1, 1);
@@ -35,28 +33,46 @@ const material = new $three.MeshBasicMaterial({ color: 0x008080 });
 const cube = new $three.Mesh(geometry, material);
 scene.add(cube)
 
-const setRenderer = () => {
+const createRenderer = () => {
     if (threeElem.value) {
         renderer.value = useRenderer({
             core: {
                 antialias: true,
                 alpha: true,
             },
-            scene: scene,
-            camera: camera,
-            size: {
-                width: width.value,
-                height: height.value,
-            },
-            misc: {
-                devicePixelRatio: pixelRatio.value,
-            },
             parent: threeElem.value,
         })
+        setRenderer()
     }
 }
 
-onMounted(() => {
+const setRenderer = () => {
+    updateRenderer(renderer.value, {
+        size: {
+            width: width.value,
+            height: height.value,
+        },
+        pixelRatio: pixelRatio.value,
+        scene: scene,
+        camera: camera,
+    })
+}
+
+watch(aspect, () => {
+    updateCamera(camera, {
+        aspect: aspect.value,
+    })
     setRenderer()
+})
+
+onMounted(() => {
+    createRenderer()
+})
+
+
+useRafFn(() => {
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+    renderer.value.render(scene, camera)
 })
 </script>
