@@ -12,8 +12,12 @@ const { $three } = useNuxtApp()  // plugins
 const { width, height } = useWindowSize()  // vueuse
 const { pixelRatio } = useDevicePixelRatio() // vueuse
 
-const props = defineProps(['color'])
-
+const props = defineProps({
+    color: {
+        type: String,
+        default: '0xffffff',
+    },
+})
 
 const threeElem = ref(null)
 const renderer = ref(null)

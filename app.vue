@@ -20,13 +20,13 @@ import {useRouter, useRoute} from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 
-const color = ref('0x008080')
+const color = ref(null)
 
 watch(route, (current, previous) => {
-  if(current.path === '/about') {
-    color.value = '0x0000ff'
+  if(current.path === '/') {
+    color.value = '0x00ff00'
   } else {
-    color.value = '0x008080'
+    color.value = '0x0000ff'
   }
 })
 
