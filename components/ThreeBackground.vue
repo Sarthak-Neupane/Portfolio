@@ -4,12 +4,16 @@
 </template>
 
 <script setup>
+import { toNumber } from '@vue/shared';
 import { useWindowSize, useDevicePixelRatio, useRafFn } from '@vueuse/core'
 
 const { $three } = useNuxtApp()  // plugins
 
 const { width, height } = useWindowSize()  // vueuse
 const { pixelRatio } = useDevicePixelRatio() // vueuse
+
+const props = defineProps(['color'])
+
 
 const threeElem = ref(null)
 const renderer = ref(null)
@@ -29,7 +33,8 @@ const camera = useCamera({
 scene.add(camera)
 
 const geometry = new $three.BoxGeometry(1, 1, 1);
-const material = new $three.MeshBasicMaterial({ color: 0x008080 });
+const material = new $three.MeshBasicMaterial();
+material.color = new $three.Color(toNumber(props.color))
 const cube = new $three.Mesh(geometry, material);
 scene.add(cube)
 
@@ -63,6 +68,10 @@ watch(aspect, () => {
         aspect: aspect.value,
     })
     setRenderer()
+})
+
+watch(props, () => {
+    material.color = new $three.Color(toNumber(props.color))
 })
 
 onMounted(() => {
