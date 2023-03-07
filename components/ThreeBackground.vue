@@ -14,8 +14,8 @@ const { pixelRatio } = useDevicePixelRatio() // vueuse
 
 const props = defineProps({
     color: {
-        type: String,
-        default: '0xffffff',
+        type: Number,
+        default: 0x000000,
     },
 })
 

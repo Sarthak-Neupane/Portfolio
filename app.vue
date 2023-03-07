@@ -1,5 +1,5 @@
 <template>
-  <nav class="font-['Poppins'] text-red-600 w-1/3 flex justify-between items-center px-5">
+  <nav class="font-['Poppins'] text-blue-600 w-1/3 flex justify-between items-center px-5">
     <NuxtLink to="/">Home</NuxtLink>
     <NuxtLink to="/about">About</NuxtLink>
   </nav>
@@ -20,13 +20,13 @@ import {useRouter, useRoute} from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 
-const color = ref(null)
+const color = ref(0)
 
 watch(route, (current, previous) => {
   if(current.path === '/') {
-    color.value = '0x00ff00'
+    color.value = 0x00ffff
   } else {
-    color.value = '0x0000ff'
+    color.value = 0xff00ff
   }
 })
 

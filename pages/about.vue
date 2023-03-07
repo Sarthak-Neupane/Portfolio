@@ -1,3 +1,3 @@
 <template>
-    <h1 class="font-['Poppins'] text-white">this is about page</h1>
+    <h1 class="font-['Poppins']">This is About Page</h1>
 </template>
