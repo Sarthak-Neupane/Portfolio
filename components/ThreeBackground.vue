@@ -15,13 +15,6 @@ const { $three } = useNuxtApp()  // plugins
 const { width, height } = useWindowSize()  // vueuse
 const { pixelRatio } = useDevicePixelRatio() // vueuse
 
-const props = defineProps({
-    color: {
-        type: Number,
-        default: 0x000000,
-    },
-})
-
 const threeElem = ref(null)
 const renderer = ref(null)
 
@@ -86,10 +79,6 @@ watch(aspect, () => {
         aspect: aspect.value,
     })
     setRenderer()
-})
-
-watch(props, () => {
-    material.color = new $three.Color(toNumber(props.color))
 })
 
 onMounted(() => {

@@ -9,27 +9,12 @@
       <!-- this will be rendered on server side -->
       <p>Loading Three...</p>
     </template>
-    <three-background :color="color"> </three-background>
+    <three-background> </three-background>
   </ClientOnly>
   <NuxtPage />
 </template>
 
 <script setup>
-import {useRouter, useRoute} from 'vue-router'
-
-const route = useRoute()
-const router = useRouter()
-
-const color = ref(0)
-
-watch(route, (current, previous) => {
-  if(current.path === '/') {
-    color.value = 0x00ffff
-  } else {
-    color.value = 0xff00ff
-  }
-})
-
 </script>
 
 <style>
