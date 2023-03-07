@@ -10,7 +10,8 @@
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.0.0-1",
     "@nuxtjs/tailwindcss": "^6.4.1",
-    "nuxt": "^3.2.3"
+    "nuxt": "^3.2.3",
+    "vite-plugin-glsl": "^1.1.2"
   },
   "dependencies": {
     "@nuxt/image-edge": "^1.0.0-27968280.9739e4d",

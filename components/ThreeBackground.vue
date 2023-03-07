@@ -7,6 +7,9 @@
 import { toNumber } from '@vue/shared';
 import { useWindowSize, useDevicePixelRatio, useRafFn } from '@vueuse/core'
 
+import fragmentShader from '~/shaders/fragment.glsl'
+import vertexShader from '~/shaders/vertex.glsl'
+
 const { $three } = useNuxtApp()  // plugins
 
 const { width, height } = useWindowSize()  // vueuse
@@ -25,36 +28,6 @@ const renderer = ref(null)
 const time = ref(0)
 const uProgress = ref(0)
 
-
-
-const vertexShader = `
-uniform float time;
-uniform float uProgress;
-varying vec2 vUv;
-varying vec3 vNormal;
-
-void main()
-{
-    vUv = uv;
-    vNormal = normal;
-    vec3 newPosition = position;
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0 );
-}
-`
-
-const fragmentShader = `uniform float time;
-uniform float uProgress;
-uniform sampler2D uTexture;
-varying vec2 vUv;
-varying vec3 vNormal;
-
-
-void main ()
-{
-    gl_FragColor = vec4(vUv, 0., 1.);
-}`
-
-
 const aspect = computed(() => width.value / height.value)
 
 const scene = useScene()
@@ -69,7 +42,7 @@ const camera = useCamera({
 
 scene.add(camera)
 
-const geometry = new $three.PlaneBufferGeometry(0.5, 0.5, 100, 100);
+const geometry = new $three.PlaneGeometry(0.5, 0.5, 100, 100);
 const material = new $three.ShaderMaterial({
     side: $three.DoubleSide,
     vertexShader: vertexShader,
