@@ -1,5 +1,6 @@
 <template>
-    <canvas ref="threeElem" class="fixed top-0 left-0 -z-10 h-screen w-full bg-red-300"> </canvas>
+    <div class="fixed top-0 left-0 -z-10 h-screen w-full" ref="threeElem">
+    </div>
 </template>
 
 <script setup>
@@ -18,30 +19,41 @@ const aspect = computed(() => width.value / height.value)
 const scene = useScene()
 const camera = useCamera({
     cameraType: 'Perspective',
+    position: { x: 0, y: 0, z: 5 },
     fov: 75,
     aspect: aspect.value,
     near: 0.1,
     far: 1000,
 })
 
+
+
+scene.add(camera)
+
+const geometry = new $three.BoxGeometry(1, 1, 1);
+const material = new $three.MeshBasicMaterial({ color: 0x008080 });
+const cube = new $three.Mesh(geometry, material);
+scene.add(cube)
+
 const setRenderer = () => {
-    if(!threeElem.value) return
-    renderer.value = useRenderer({
-        core: {
-            antialias: true,
-            alpha: true,
-            canvas: threeElem.value,
-        },
-        scene: scene.value,
-        camera: camera.value,
-        size: {
-            width: width.value,
-            height: height.value,
-        },
-        misc: {
-            devicePixelRatio: pixelRatio,
-        },
-    })
+    if (threeElem.value) {
+        renderer.value = useRenderer({
+            core: {
+                antialias: true,
+                alpha: true,
+            },
+            scene: scene,
+            camera: camera,
+            size: {
+                width: width.value,
+                height: height.value,
+            },
+            misc: {
+                devicePixelRatio: pixelRatio.value,
+            },
+            parent: threeElem.value,
+        })
+    }
 }
 
 onMounted(() => {
