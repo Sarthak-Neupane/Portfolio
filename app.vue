@@ -1,17 +1,19 @@
 <template>
-  <nav class="font-['Poppins'] text-blue-600 w-1/3 flex justify-between items-center px-5">
-    <NuxtLink to="/">Home</NuxtLink>
-    <NuxtLink to="/about">About</NuxtLink>
-  </nav>
-  <ClientOnly>
-    <!-- ... -->
-    <template #fallback>
-      <!-- this will be rendered on server side -->
-      <p>Loading Three...</p>
-    </template>
-    <three-background> </three-background>
-  </ClientOnly>
-  <NuxtPage />
+  <div class="font-['poppins']">
+    <div class="w-full flex justify-center items-center bg-[#fffeff]">
+      <Logo />
+    </div>
+    <div class="w-full flex justify-center items-center bg-[#FFBE0B]">
+      <Subtitle />
+    </div>
+    <!-- <ClientOnly>
+      <template #fallback>
+        <p>Loading Three...</p>
+      </template>
+      <three-background> </three-background>
+    </ClientOnly> -->
+    <NuxtPage />
+  </div>
 </template>
 
 <script setup>

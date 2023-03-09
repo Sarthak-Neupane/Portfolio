@@ -26,8 +26,8 @@ const aspect = computed(() => width.value / height.value)
 const scene = useScene()
 const camera = useCamera({
     cameraType: 'Perspective',
-    position: { x: 0, y: 0, z: 1 },
-    fov: 75,
+    position: { x: 0, y: 0, z: 0.5 },
+    fov: (180 * (2 * Math.atan(height.value / 2 / 0.5))) / Math.PI,
     aspect: aspect.value,
     near: 0.1,
     far: 1000,
@@ -35,7 +35,7 @@ const camera = useCamera({
 
 scene.add(camera)
 
-const geometry = new $three.PlaneGeometry(0.5, 0.5, 100, 100);
+const geometry = new $three.PlaneGeometry(250, 250, 100, 100);
 const material = new $three.ShaderMaterial({
     side: $three.DoubleSide,
     vertexShader: vertexShader,
@@ -77,6 +77,7 @@ const setRenderer = () => {
 watch(aspect, () => {
     updateCamera(camera, {
         aspect: aspect.value,
+        fov : (180 * (2 * Math.atan(height.value / 2 / 0.5))) / Math.PI,
     })
     setRenderer()
 })
@@ -90,7 +91,4 @@ useRafFn(() => {
     time.value += 0.01
     renderer.value.render(scene, camera)
 })
-
-
-
 </script>

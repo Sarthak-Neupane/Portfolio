@@ -16,6 +16,7 @@
   "dependencies": {
     "@nuxt/image-edge": "^1.0.0-27968280.9739e4d",
     "@vueuse/core": "^9.13.0",
+    "gsap": "^3.11.4",
     "three": "^0.150.1"
   }
 }
