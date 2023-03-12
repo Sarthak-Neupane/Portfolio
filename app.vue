@@ -1,9 +1,9 @@
 <template>
-  <div class="font-['poppins']">
-    <div class="w-full flex justify-center items-center bg-[#fffeff]">
+  <div class="font-['poppins'] text-dark">
+    <div class="w-full flex justify-center items-center bg-light">
       <Logo />
     </div>
-    <div class="w-full flex justify-center items-center bg-[#FFBE0B]">
+    <div class="w-full flex justify-center items-center bg-yellow">
       <Subtitle />
     </div>
     <!-- <ClientOnly>
