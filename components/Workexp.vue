@@ -1,9 +1,9 @@
 <template>
-    <div class="w-full">
+    <div class="w-full flex flex-col justify-between items-stretch">
         <div>
             <MovingText />
         </div>
-        <div class="flex flex-col justify-center items-start gap-8 mt-5 pb-9">
+        <div class="flex flex-col justify-center items-start gap-8">
             <work-inner>
                 <template #headline>
                     2020-2022

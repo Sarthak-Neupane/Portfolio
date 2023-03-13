@@ -1,5 +1,5 @@
 <template>
-    <div class="relative h-5 flex justify-center items-center w-full py-4" ref="main">
+    <div class="relative py-4 h-5 flex justify-center items-center w-full" ref="main">
         <h1 class="truncate px-3 text-xs absolute top-1/2 -translate-y-1/2 left-0 bg-[#FFFEFF] overflow-hidden"
             ref="movingText">Who am I</h1>
         <div class="w-full h-0.5 bg-[#FFBE0B]"></div>

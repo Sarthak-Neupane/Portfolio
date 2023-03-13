@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full justify-between items-center">
+    <div class="w-full flex flex-col justify-between items-stretch">
         <div class="">
             <MovingText />
         </div>
