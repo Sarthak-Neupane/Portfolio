@@ -3,7 +3,7 @@
     <div class="w-full flex justify-center items-center bg-light">
       <Logo />
     </div>
-    <div class="w-full flex justify-center items-center bg-yellow">
+    <div class="w-full flex justify-center items-center lg:mb-7 bg-yellow">
       <Subtitle />
     </div>
     <!-- <ClientOnly>
