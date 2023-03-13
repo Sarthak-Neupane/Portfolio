@@ -1,6 +1,8 @@
 <template>
-    <div>
-        <MovingText />
+    <div class="w-full justify-between items-center">
+        <div class="">
+            <MovingText />
+        </div>
             <div class="flex flex-col justify-center items-start gap-5">
                 <div class="w-full flex justify-between items-center">
                     <div class="text-2xl font-bold text-green">

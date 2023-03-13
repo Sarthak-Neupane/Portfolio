@@ -1,7 +1,9 @@
 <template>
     <div class="w-full">
-        <MovingText />
         <div>
+            <MovingText />
+        </div>
+        <div class="flex flex-col justify-center items-start gap-8 mt-5 pb-9">
             <work-inner>
                 <template #headline>
                     2020-2022
@@ -14,19 +16,10 @@
                     reprehenderit laudantium unde sed modi non sint nemo!
                 </template>
             </work-inner>
-
-            <work-inner>
-                <template #headline>
-                    Available For Work
-                </template>
-                <template #subtitle>
-                    You get your products built, I get to fill this space.
-                </template>
-                <template #desc>
-                    
-                </template>
-            </work-inner>
-            
+            <div class="h-[1px] w-full bg-purple"></div>
+            <AvailableWork />
+            <div class="h-[1px] w-full bg-purple"></div>
+            <AboutMeNavbar />
         </div>
     </div>
 </template>

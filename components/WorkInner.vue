@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col justify-center items-start gap-4 pt-5 pb-10 border-b-2 border-solid border-purple">
+    <div class="flex flex-col justify-center items-start gap-4">
         <h1 class="text-7xl font-bold text-purple stroke-purple stroke-2 w-3/4">
             <!-- 2020 - 2022 -->
             <slot name="headline"></slot>
