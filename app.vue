@@ -31,7 +31,7 @@ const router = useRouter()
 
 const header = ref(null)
 
-const transform = ref(true)
+const transform = ref(false)
 
 const onEnter = (el, done) => {
   gsap.to(header.value, {
@@ -46,6 +46,15 @@ const onEnter = (el, done) => {
 
 const onLeave = (el, done) => {
   const pageName = header.value.querySelector('#pageName')
+  console.log(pageName.firstElementChild)
+  console.log(pageName.lastElementChild)
+  if(transform.value){
+    pageName.firstElementChild.innerHTML = route.name
+    pageName.lastElementChild.innerHTML = route.name === 'About' ? 'Work' : 'About'
+  } else {
+    pageName.lastElementChild.innerHTML = route.name
+    pageName.firstElementChild.innerHTML = route.name === 'About' ? 'Work' : 'About'
+  }
   const tl = gsap.timeline()
   tl.to(header.value, {
     duration: 1,
@@ -54,9 +63,10 @@ const onLeave = (el, done) => {
   })
   tl.to(pageName, {
     duration: 0.5,
-    y: transform.value ? '-100%' : '0%',
+    y: transform.value ? '-0%' : '-100%',
     onComplete: () => {
       transform.value = !transform.value
+      console.log(transform.value)
       done()
     }
   })

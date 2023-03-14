@@ -12,9 +12,8 @@
 </template>
 
 <script setup>
-const emit = defineEmits(['initiateTransition'])
-
-onBeforeRouteLeave(() => {
-    emit('initiateTransition')
+definePageMeta({
+    title: 'About',
+    name: 'About',
 })
 </script>
