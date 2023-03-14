@@ -31,14 +31,12 @@ const router = useRouter()
 
 const header = ref(null)
 
-const pageTransition = () => {
-  console.log('pageTransition')
-}
+const transform = ref(true)
 
 const onEnter = (el, done) => {
   gsap.to(header.value, {
-    duration: 2,
-    height: '100%',
+    duration: 1,
+    height: '9vh',
     ease: 'power4.out',
     onComplete: () => {
       done()
@@ -47,12 +45,18 @@ const onEnter = (el, done) => {
 }
 
 const onLeave = (el, done) => {
+  const pageName = header.value.querySelector('#pageName')
   const tl = gsap.timeline()
   tl.to(header.value, {
-    duration: 2,
-    height: '9vh',
+    duration: 1,
+    height: '100vh',
     ease: 'power4.out',
+  })
+  tl.to(pageName, {
+    duration: 0.5,
+    y: transform.value ? '-100%' : '0%',
     onComplete: () => {
+      transform.value = !transform.value
       done()
     }
   })
