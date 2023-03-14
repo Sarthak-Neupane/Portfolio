@@ -6,7 +6,7 @@
         </div>
         <div class="flex flex-col justify-center items-start gap-3">
             <h1 class="font-semibold text-base">Convinced?</h1>
-            <NuxtLink to="/" class="text-purple font-medium text-sm"> --> Contact </NuxtLink>
+            <NuxtLink to="/contact" class="text-purple font-medium text-sm"> --> Contact </NuxtLink>
         </div>
     </div>
 </template>
