@@ -1,10 +1,12 @@
 <template>
-  <div class="font-['poppins'] text-dark">
-    <div class="w-full flex justify-center items-center bg-light h-[9vh]">
-      <Logo />
-    </div>
-    <div class="w-full flex justify-center items-center fixed top-0 left-0 z-10 bg-light h-[9vh]" ref="header">
-      <Logo />
+  <div class="font-['poppins'] text-dark min-h-screen">
+    <div class="h-[9vh]">
+      <div class="w-full flex justify-center items-center bg-light h-[9vh]">
+        <Logo />
+      </div>
+      <div class="w-full flex justify-center items-center fixed top-0 left-0 z-10 bg-light h-[9vh]" ref="header">
+        <Logo />
+      </div>
     </div>
     <!-- <ClientOnly>
       <template #fallback>
@@ -12,13 +14,14 @@
       </template>
       <three-background> </three-background>
     </ClientOnly> -->
-
-    <nuxt-page :transition="{
-      onEnter: onEnter,
-      onLeave: onLeave,
-      mode: 'out-in',
-    }">
-    </nuxt-page>
+    <div class="min-h-[91vh]">
+          <nuxt-page :transition="{
+            onEnter: onEnter,
+            onLeave: onLeave,
+            mode: 'out-in',
+          }">
+          </nuxt-page>
+    </div>
   </div>
 </template>
 
