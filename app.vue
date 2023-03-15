@@ -1,10 +1,10 @@
 <template>
-  <div class="font-['poppins'] text-dark min-h-screen">
-    <div class="h-[9vh]">
-      <div class="w-full flex justify-center items-center bg-light h-[9vh]">
+  <div class="font-['poppins'] text-dark flex flex-col justify-center items-center min-h-screen w-full">
+    <div class="h-[10vh]">
+      <div class="w-full flex justify-center items-center bg-light h-[10vh]">
         <Logo />
       </div>
-      <div class="w-full flex justify-center items-center fixed top-0 left-0 z-10 bg-light h-[9vh]" ref="header">
+      <div class="w-full flex justify-center items-center fixed top-0 left-0 z-10 bg-light h-[10vh]" ref="header">
         <Logo />
       </div>
     </div>
@@ -14,7 +14,7 @@
       </template>
       <three-background> </three-background>
     </ClientOnly> -->
-    <div class="min-h-[91vh]">
+    <div class="flex-grow w-full">
           <nuxt-page :transition="{
             onEnter: onEnter,
             onLeave: onLeave,
@@ -48,7 +48,7 @@ const onEnter = (el, done) => {
   })
   tl.to(header.value, {
     duration: 1,
-    height: '9vh',
+    height: '10vh',
     ease: 'power4.out',
     onComplete: () => {
       done()

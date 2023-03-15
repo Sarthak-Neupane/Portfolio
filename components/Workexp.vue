@@ -1,6 +1,6 @@
 <template>
     <div class="w-full flex flex-col justify-between items-stretch lg:justify-around">
-        <div class=" lg:w-1/12 lg:h-full" ref="container">
+        <div class=" lg:w-1/12 lg:h-full my-2 sm:my-4" ref="container">
             <MovingText />
         </div>
         <div class="flex flex-col justify-center items-start gap-8 lg:w-full">

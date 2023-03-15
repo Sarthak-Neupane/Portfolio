@@ -1,10 +1,10 @@
 <template>
     <div class="w-full flex justify-center items-center gap-5 py-5">
-        <h1 class="font-bold text-lg">Sarthak Neupane</h1>
+        <h1 class="font-bold text-lg sm:text-2xl md:text-3xl">Sarthak Neupane</h1>
         <div class="px-3 relative flex flex-col justify-center items-stretch overflow-y-hidden">
-            <div class=" flex flex-col justify-center items-center" id="pageName">
-                <span class="text-xs text-center font-medium"> {{  getRouteFirst }} </span>
-                <span class=" text-xs flex justify-center items-center font-medium absolute top-full left-0 w-full h-full"> 
+            <div class=" flex flex-col justify-center items-center text-xs sm:text-base md:text-lg" id="pageName">
+                <span class="text-center font-medium"> {{  getRouteFirst }} </span>
+                <span class=" flex justify-center items-center font-medium absolute top-full left-0 w-full h-full"> 
                     {{ getRouteSecond }} </span>
             </div>
         </div>

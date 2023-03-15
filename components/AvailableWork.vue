@@ -3,7 +3,7 @@
         <h1 class="text-4xl font-semibold text-purple">
             Available For Hire
         </h1>
-        <h2 class="font-medium text-lg">
+        <h2 class="font-medium text-base">
             You get your products built, I get to fill this space
         </h2>
     </div>
