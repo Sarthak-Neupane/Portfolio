@@ -1,5 +1,5 @@
 <template>
-  <div class="font-['poppins'] text-dark flex flex-col justify-center items-center min-h-screen w-full">
+  <div class="font-['poppins'] text-dark flex flex-col justify-center items-center min-h-screen w-full pl-[calc(100vw_-_100%)">
     <div class="h-[10vh]">
       <div class="w-full flex justify-center items-center bg-light h-[10vh]">
         <Logo />

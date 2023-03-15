@@ -8,6 +8,10 @@ module.exports = {
                 'green': '#7AC74F',
                 'purple': '#9E4770',
             },
+            screens: {
+                '4xl': '2560px',
+                '6xl': '3840px',
+            }
         },
     },
 }
