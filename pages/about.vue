@@ -27,8 +27,6 @@ const play = ref(false)
 
 watch(() => transition.transitionState.transitionComplete, (val) => {
    if (val) {
-      console.log('transition complete')
-      console.log(val)
       play.value = true
    }
 })

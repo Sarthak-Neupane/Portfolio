@@ -29,7 +29,6 @@ onMounted(() => {
 
 router.beforeResolve((to, from, next) => {
     transform.value = !transform.value
-    console.log('transform value', transform.value)
     currentRoute = from.name
     next()
 })

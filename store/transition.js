@@ -1,28 +1,19 @@
 export const useTransitionStore = defineStore('transition', {
   state: () => ({
-    pageNameTransform: false,
-    transitionState: false,
-    initialRender: true
+    // transitionState: false,
   }),
 
   getters: {
-    state: state => state.transitionState,
-    initialRenderState: state => state.initialRender,
-    getPageNameTransform: state => state.pageNameTransform
+    // state: state => state.transitionState,
+    // initialRenderState: state => state.initialRender,
   },
 
   actions: {
-    transitionStart () {
-        this.transitionState = true
-    },
-    transitionEnd () {
-        this.transitionState = false
-    },
-    initialRenderEnd () {
-        this.initialRender = false
-    },
-    togglePageNameTransform () {
-        this.pageNameTransform = !this.pageNameTransform
-    }
+    // transitionStart () {
+    //     this.transitionState = true
+    // },
+    // transitionEnd () {
+    //     this.transitionState = false
+    // },
   }
 })
