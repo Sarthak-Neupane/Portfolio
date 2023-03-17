@@ -26,7 +26,6 @@
 
 <script setup>
 import gsap from 'gsap';
-import { useTransitionStore } from '@/store/transition';
 import { toRefs } from 'vue';
 
 const props = defineProps({
@@ -36,58 +35,67 @@ const props = defineProps({
     }
 })
 
-const emits = defineEmits(['hover', 'unHover'])
+const hovered = ref(false);
 
-const transitionStore = useTransitionStore()
-
+const emits = defineEmits(['hover', 'unHover', 'pause', 'resume'])
 const container = ref(null);
 const boxes = ref(null);
-const Images = ref([]);
 
 const hoverImage = (e) => {
+    hovered.value = true;
     const { hover, name } = e.target.dataset;
     emits('hover', { hover: hover, name: name })
 }
 
 const unHoverImage = () => {
+    hovered.value = false;
     emits('unHover')
 }
 
 const ctx = ref(null);
-let loop;
+const loop = ref(null)
 
 const play = toRefs(props).play;
 
 watch(play, (val) => {
-    if (val) {
-        if (loop) {
-            loop.play()
+    if (loop.value) {
+        if (!hovered.value) {
+            loop.value.play()
         } else {
-            ctx.value = gsap.context((self) => {
-                boxes.value = self.selector('.contentBox');
-                loop = useHorizontalScroll(boxes.value, {
-                    paused: true,
-                    repeat: -1
-                });
-                loop.play()
-            }, container.value)
+            loop.value.pause()
         }
     } else {
-        if (loop) {
-            loop.pause()
-        }
+        createLoop(!hovered.value)
     }
 })
 
+
+const createLoop = (val) => {
+    ctx.value = gsap.context((self) => {
+        boxes.value = self.selector('.contentBox');
+        loop.value = useHorizontalScroll(boxes.value, {
+            paused: true,
+            repeat: -1
+        });
+        if (val) {
+            loop.value.play()
+        } else {
+            loop.value.pause()
+        }
+    }, container.value)
+}
+
 const pauseCarousel = () => {
-    if (loop) {
-        loop.pause()
+    emits('pause')
+    if (loop.value) {
+        loop.value.pause()
     }
 }
 
 const resumeCarousel = () => {
-    if (loop) {
-        loop.play()
+    emits('resume')
+    if (loop.value) {
+        loop.value.play()
     }
 }
 

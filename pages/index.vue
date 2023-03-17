@@ -2,10 +2,11 @@
    <section class="lg:overflow-hidden lg:min-h-[90vh] h-full flex flex-col justify-center items-center">
       <div class="flex-1 flex-col w-full flex justify-center items-center gap-4">
          <div class="flex justify-center items-center w-full">
-            <Header :play="play" :letters="letters" />
+            <Header :play="playHeader" :letters="letters" />
          </div>
          <div class="flex justify-center items-start">
-            <Carousel :play="play" @hover="imageHover" @unHover="imageUnHover" />
+            <Carousel :play="playCarousel" @hover="imageHover" @unHover="imageUnHover" @resume="resumeCarousel"
+               @pauseCarousel="pauseCarousel" />
          </div>
       </div>
    </section>
@@ -22,20 +23,29 @@ definePageMeta({
 })
 
 const transition = useTransitionComposable()
-const transitionState = toRefs(transition.transitionState).transitionComplete
+const transitionComplete = toRefs(transition.transitionState).transitionComplete
 
-const play = ref(false)
+const playHeader = ref(false)
+const playCarousel = ref(false)
+const hovered = ref(false)
 const letters = ref(['-', '-', '-', 'W', 'O', 'R', 'K', '-', '-', '-'])
 
-watch(transitionState, (val) => {
+watch(transitionComplete, (val) => {
    if (val) {
-      play.value = true
+      if (hovered.value) {
+         playHeader.value = true
+         playCarousel.value = false
+      } else {
+         playHeader.value = true
+         playCarousel.value = true
+      }
    }
 })
 
 const imageHover = (options) => {
-   console.log(options.hover)
-   console.log(options.name)
+   playHeader.value = !playHeader.value
+   playCarousel.value = !playCarousel.value
+   hovered.value = true
    const passedLetters = options.name.split('')
    if (passedLetters.length != 10) {
       if (passedLetters.length > 10) {
@@ -57,8 +67,21 @@ const imageHover = (options) => {
    letters.value = passedLetters
 }
 
-const imageUnHover = ()=>{
-   letters.value = ['-','-','-','W','O','R','K','-','-','-']
+const imageUnHover = () => {
+   playHeader.value = !playHeader.value
+   playCarousel.value = !playCarousel.value
+   hovered.value = false
+   letters.value = ['-', '-', '-', 'W', 'O', 'R', 'K', '-', '-', '-']
+}
+
+const pauseCarousel = () => {
+   playHeader.value = false
+   playCarousel.value = false
+}
+
+const resumeCarousel = () => {
+   playHeader.value = true
+   playCarousel.value = true
 }
 
 </script>

@@ -21,7 +21,6 @@ const props = defineProps({
 })
 
 const play = toRefs(props).play
-const alphabet = toRefs(props).alphabet
 
 const ctx = ref()
 const wheel = ref(null)
@@ -30,32 +29,40 @@ const loop = ref(null)
 
 const alphabets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '-']
 
+
 watch(play, (val) => {
-    if (val) {
-        if (loop.value) {
+    if (loop.value) {
+        convertAndSpin(props.alphabet)
+        if (val) {
             loop.value.play()
         } else {
-            ctx.value = gsap.context((self) => {
-                letters.value = self.selector('.letters');
-                loop.value = useVerticalWheelHelper(letters.value, {
-                    repeat: -1,
-                    paused: true,
-                })
-            }, wheel.value)
-        }
-    } else {
-        if (loop.value) {
             loop.value.pause()
         }
+    } else {
+        createLoop(val)
+        convertAndSpin(props.alphabet)
     }
 })
 
-watch(alphabet, (newVal, oldVal) => {
-    if (newVal) {
-        const index = (convertToIndex(props.alphabet))
-        spin(loop.value, index)
-    }
-})
+const createLoop = (val) => {
+    ctx.value = gsap.context((self) => {
+        letters.value = self.selector('.letters');
+        loop.value = useVerticalWheelHelper(letters.value, {
+            repeat: -1,
+            paused: true,
+        })
+        if (val) {
+            loop.value.play()
+        } else {
+            loop.value.pause()
+        }
+    }, wheel.value)
+}
+
+const convertAndSpin = (alphabet) => {
+    const index = (convertToIndex(alphabet))
+    spin(loop.value, index)
+}
 
 const convertToIndex = (alphabet) => {
     return alphabets.indexOf(alphabet)
@@ -65,15 +72,8 @@ const spin = (wheel, index) => {
     wheel.toIndex(index, { duration: 1.5, ease: "power2.inOut" });
 }
 
-watch(letters, (newVal, oldVal) => {
-    if (newVal) {
-        const index = (convertToIndex(props.alphabet))
-        spin(loop.value, index)
-    }
-})
-
 onUnmounted(() => {
-    ctx.value.revert(); 
+    ctx.value.revert();
 });
 
 </script>
