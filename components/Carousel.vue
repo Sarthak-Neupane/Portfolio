@@ -62,62 +62,20 @@ watch(() => props.play, (val) => {
     }
 })
 
-// onMounted(() => {
-//     if (transitionStore.initialRenderState) {
-//         if (!transitionStore.transitionState) {
-//             ctx.value = gsap.context((self) => {
-//                 boxes.value = self.selector('.contentBox');
-//                 loop = useHorizontalScroll(boxes.value, {
-//                     paused: true,
-//                     repeat: -1
-//                 });
-//                 loop.play()
-//             }, container.value)
-//         }
-//         transitionStore.$subscribe((mutation, state) => {
-//             if (!state.transitionState) {
-//                 ctx.value = gsap.context((self) => {
-//                     boxes.value = self.selector('.contentBox');
-//                     loop = useHorizontalScroll(boxes.value, {
-//                         paused: true,
-//                         repeat: -1
-//                     });
-//                     loop.play()
-//                 }, container.value)
-//             }
-//         })
-//     } else {
-//         transitionStore.$subscribe((mutation, state) => {
-//             if (!state.transitionState) {
-//                 ctx.value = gsap.context((self) => {
-//                     boxes.value = self.selector('.contentBox');
-//                     loop = useHorizontalScroll(boxes.value, {
-//                         paused: true,
-//                         repeat: -1
-//                     });
-//                     loop.play()
-//                 }, container.value)
-//             }
-//         })
-//     }
-// })
-
 const pauseCarousel = () => {
     if (loop) {
         loop.pause()
     }
-    // loop.pause()
 }
 
 const resumeCarousel = () => {
-    // loop.play()
     if (loop) {
         loop.play()
     }
 }
 
 onUnmounted(() => {
-    ctx.value.revert(); // <- Easy Cleanup!
+    ctx.value.revert();
 });
 
 

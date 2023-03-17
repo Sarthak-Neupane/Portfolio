@@ -1,7 +1,7 @@
 <template>
     <div class="w-full flex flex-col justify-between items-stretch lg:justify-around">
         <div class=" lg:w-1/12 lg:h-full my-2 sm:my-4 lg:my-0 xl:mr-8" ref="container">
-            <MovingText />
+            <MovingText :play="play" />
         </div>
         <div class="flex flex-col justify-center items-start gap-8 2xl:gap-12 4xl:gap-24 6xl:gap-32 lg:w-full">
             <work-inner>
@@ -23,3 +23,14 @@
         </div>
     </div>
 </template>
+
+<script setup>
+
+const props = defineProps({
+    play: {
+        type: Boolean,
+        required: true
+    }
+})
+
+</script>

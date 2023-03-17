@@ -2,7 +2,7 @@
 import glsl from "vite-plugin-glsl";
 export default defineNuxtConfig({
 
-  ssr: false,
+  // ssr: false,
 
   build: {
     transpile: ["gsap", "three"],

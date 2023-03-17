@@ -13,8 +13,8 @@
 
 <script setup>
 import transitionConfig from '../helpers/transition';
-import { useTransitionComposable } from '@/composables/useTransitionComposable'
-const { transitionState, toggleTransitionComplete } = useTransitionComposable()
+// import { useTransitionComposable } from '@/composables/useTransitionComposable'
+// const { transitionState } = useTransitionComposable()
 
 definePageMeta({
    title: 'Work',
@@ -22,9 +22,11 @@ definePageMeta({
    pageTransition: transitionConfig,
 })
 
+const transition = useTransitionComposable()
+
 const play = ref(false)
 
-watch(() => transitionState.transitionComplete, (val) => {
+watch(() => transition.transitionState.transitionComplete, (val) => {
    if (val) {
       console.log('transition complete')
       console.log(val)
@@ -32,6 +34,5 @@ watch(() => transitionState.transitionComplete, (val) => {
    }
 })
 
-// console.log(transitionState.transitionComplete)
 
 </script>

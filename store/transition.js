@@ -1,4 +1,4 @@
-export const useTransitionStore = defineStore('counter', {
+export const useTransitionStore = defineStore('transition', {
   state: () => ({
     pageNameTransform: false,
     transitionState: false,
