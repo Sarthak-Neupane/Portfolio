@@ -8,32 +8,44 @@
 <script setup>
 import gsap from 'gsap';
 
-const alphabets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '-']
-
 const props = defineProps({
     alphabet: {
         type: String,
         required: true
+    },
+    play: {
+        type: Boolean,
+        required: true
     }
 })
+
+
 const ctx = ref()
 const wheel = ref(null)
 const letters = ref(null)
 const loop = ref(null)
 
-onMounted(() => {
-    ctx.value = gsap.context((self) => {
-        letters.value = self.selector('.letters');
-        loop.value = useVerticalWheelHelper(letters.value, {
-            repeat: -1,
-            paused: true,
-        })
-    }, wheel.value)
-})
+const alphabets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '-']
 
-onUnmounted(() => {
-    ctx.value.revert(); // <- Easy Cleanup!
-});
+watch(() => props.play, (val) => {
+    if (val) {
+        if (loop.value) {
+            loop.value.play()
+        } else {
+            ctx.value = gsap.context((self) => {
+                letters.value = self.selector('.letters');
+                loop.value = useVerticalWheelHelper(letters.value, {
+                    repeat: -1,
+                    paused: true,
+                })
+            }, wheel.value)
+        }
+    } else {
+        if (loop.value) {
+            loop.value.pause()
+        }
+    }
+})
 
 const convertToIndex = (alphabet) => {
     return alphabets.indexOf(alphabet)
@@ -50,18 +62,8 @@ watch(letters, (newVal, oldVal) => {
     }
 })
 
-
-// watch(loop, (newVal, oldVal) => {
-//     if (newVal) {
-
-//     }
-// })
-
-// if(props.alphabet && loop) {
-//     const index = convertToIndex(props.alphabet)
-//     spin(loop, index)
-// }
-
-
+onUnmounted(() => {
+    ctx.value.revert(); // <- Easy Cleanup!
+});
 
 </script>

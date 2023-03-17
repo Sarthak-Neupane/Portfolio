@@ -43,7 +43,7 @@ const getRouteFirst = computed(()=>{
 
 const getRouteSecond = computed(()=>{
     if(transform.value === null){
-        return 'DUM'
+        return 'HELLO'
     } else if(transform.value){
         return route.name
     } else {

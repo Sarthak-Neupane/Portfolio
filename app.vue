@@ -1,10 +1,10 @@
 <template>
-  <div class="font-['poppins'] text-dark flex flex-col justify-center items-center min-h-screen w-full">
-    <div class="max-h-[10vh]">
+  <div class="font-['poppins'] text-dark flex flex-col justify-center items-center min-h-screen w-full" ref="header">
+    <div class="h-[10vh]">
       <div class="w-full flex justify-center items-center bg-light h-[10vh]">
         <Logo />
       </div>
-      <div class="w-full flex justify-center items-center fixed top-0 left-0 z-10 bg-light h-[10vh]" ref="header">
+      <div class="w-full flex justify-center items-center fixed top-0 left-0 z-10 bg-light h-[10vh]" id="header">
         <Logo />
       </div>
     </div>
@@ -15,58 +15,14 @@
       <three-background> </three-background>
     </ClientOnly> -->
     <div class="flex-grow w-full">
-          <nuxt-page :transition="{
-            onEnter: onEnter,
-            onLeave: onLeave,
-            mode: 'out-in',
-          }">
-          </nuxt-page>
+      <nuxt-page >
+      </nuxt-page>
     </div>
   </div>
 </template>
 
 <script setup>
-import gsap from 'gsap';
 import { useRoute, useRouter } from 'vue-router'
-
-const route = useRoute()
-const router = useRouter()
-
-const header = ref(null)
-
-const transform = ref(false)
-
-const onEnter = (el, done) => {
-  const pageName = header.value.querySelector('#pageName')
-  const tl = gsap.timeline()
-  tl.to(pageName, {
-    duration: 0.5,
-    y: transform.value ? '-0%' : '-100%',
-    onComplete: () => {
-      transform.value = !transform.value
-    }
-  })
-  tl.to(header.value, {
-    duration: 1,
-    height: '10vh',
-    ease: 'power4.out',
-    onComplete: () => {
-      done()
-    }
-  })
-}
-
-const onLeave = (el, done) => {
-  gsap.to(header.value, {
-    duration: 1,
-    height: '100vh',
-    ease: 'power4.out',
-    onComplete: () => {
-      done()
-    }
-  })
-}
-
 </script>
 
 <style>

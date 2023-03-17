@@ -2,6 +2,8 @@
 import glsl from "vite-plugin-glsl";
 export default defineNuxtConfig({
 
+  ssr: false,
+
   build: {
     transpile: ["gsap", "three"],
   },
@@ -22,6 +24,7 @@ export default defineNuxtConfig({
       },
     ],
     "@nuxt/image-edge",
+    '@pinia/nuxt',
   ],
   vite: {
     plugins: [
@@ -35,6 +38,12 @@ export default defineNuxtConfig({
           "**/*.fs",
         ],
       }),
+    ],
+  },
+  pinia: {
+    autoImports: [
+      // automatically imports `defineStore`
+      'defineStore', // import { defineStore } from 'pinia'
     ],
   },
 });

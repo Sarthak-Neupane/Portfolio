@@ -18,10 +18,13 @@
     </section>
  </template>
  
- <script setup>
+ <script setup> 
+import transitionConfig from '../helpers/transition';
+
  definePageMeta({
     title: 'Contact',
     name: 'Contact',
+    pageTransition: transitionConfig,
  })
  </script>
  

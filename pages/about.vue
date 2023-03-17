@@ -14,8 +14,10 @@
 </template>
 
 <script setup>
+import transitionConfig from '../helpers/transition';
 definePageMeta({
     title: 'About',
     name: 'About',
+    pageTransition: transitionConfig,
 })
 </script>
