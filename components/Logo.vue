@@ -91,7 +91,7 @@ router.beforeResolve((to, from, next) => {
 
 const getRouteFirst = computed(() => {
     if (transform.value === null) {
-        return 'HELLO'
+        return 'WELCOME'
     } else if (transform.value) {
         return route.name
     } else {
