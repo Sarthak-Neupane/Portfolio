@@ -71,9 +71,9 @@ const router = useRouter()
 
 const { width } = useWindowSize()
 
-const getWidth = () => {
+const getWidth = computed(()=>{
     return width.value
-}
+})
 let currentRoute = ''
 
 const transform = ref(null)
