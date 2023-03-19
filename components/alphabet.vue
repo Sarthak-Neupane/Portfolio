@@ -1,5 +1,5 @@
 <template>
-    <div class="relative overflow-hidden box-border max-h-24" ref="wheel">
+    <div class="overflow-hidden box-border grid text-4xl max-h-9 md:text-6xl md:max-h-[3.75rem] xl:max-h-24 xl:text-8xl 2xl:text-9xl 2xl:max-h-32 font-bold " ref="wheel">
         <h1 v-for="alph in alphabets" :key="alph" class="letters box-border">{{ alph }}</h1>
     </div>
 </template>
@@ -27,7 +27,7 @@ const wheel = ref(null)
 const letters = ref(null)
 const loop = ref(null)
 
-const alphabets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '-']
+const alphabets = ['-', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
 
 watch(play, (val) => {

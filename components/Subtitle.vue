@@ -16,5 +16,4 @@ const props = defineProps({
         default: 'Subtitle'
     }
 })
-
 </script>

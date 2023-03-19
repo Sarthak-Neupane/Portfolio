@@ -1,5 +1,6 @@
 <template>
-    <div class="text-8xl font-bold w-full h-full text-center px-3 py-4 flex justify-around items-center text-dark">
+    <div
+        class="w-full lg:h-full text-center px-3 py-4 flex justify-around items-center lg:items-center text-dark overflow-hidden">
         <alphabet v-for="(letter, index) in letters" :key="index" :alphabet="letter" :play="play" />
     </div>
 </template>
