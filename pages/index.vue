@@ -39,6 +39,10 @@ import transitionConfig from '../helpers/transition';
 import { toRefs } from 'vue';
 import { useWindowSize } from '@vueuse/core';
 
+useHead({
+   title: 'Work',
+})
+
 definePageMeta({
    name: 'Work',
    pageTransition: transitionConfig,

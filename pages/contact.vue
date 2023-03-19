@@ -49,6 +49,10 @@ import transitionConfig from '../helpers/transition';
 import { useWindowSize } from '@vueuse/core';
 import gsap from 'gsap';
 
+useHead({
+   title: 'Contact',
+})
+
 definePageMeta({
    title: 'Contact',
    name: 'Contact',

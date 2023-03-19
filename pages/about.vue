@@ -16,6 +16,10 @@
 <script setup>
 import transitionConfig from '../helpers/transition';
 
+useHead({
+    title: 'About',
+})
+
 definePageMeta({
     title: 'About',
     name: 'About',
