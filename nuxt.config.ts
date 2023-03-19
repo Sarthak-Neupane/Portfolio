@@ -18,7 +18,6 @@ export default defineNuxtConfig({
           Poppins: [400, 500, 600, 700],
         },
         display: "swap",
-        download: true,
         preconnect: true,
         preload: true,
       },

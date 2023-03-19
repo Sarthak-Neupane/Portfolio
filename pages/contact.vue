@@ -1,6 +1,6 @@
 <template>
     <section>
-       <div class="w-full flex justify-center items-center lg:mb-7 bg-purple">
+       <div class="w-full flex justify-center items-center lg:mb-7 bg-green">
           <Subtitle headline="Lets build together" Subtitle="So I can add it here :) " />
        </div>
        <div>

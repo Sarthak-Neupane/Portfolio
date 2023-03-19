@@ -5,7 +5,8 @@
       </div>
       <div class="flex-1 flex-col w-full flex justify-center items-center gap-5 sm:gap-14 md:gap-20 lg:gap-5">
          <div class="flex justify-center items-center w-full">
-            <Header :play="playHeader" :letters="letters" />
+            <Header :play="playHeader" :letters="letters">
+            </Header>
          </div>
          <div
             class="flex justify-center items-center aspect-square max-w-xs sm:max-w-md md:max-w-xl lg:aspect-auto lg:max-w-full">

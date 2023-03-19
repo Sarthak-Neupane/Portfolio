@@ -7,6 +7,7 @@ const transitionState = reactive({
 export const useTransitionComposable = () => {
   const toggleTransitionComplete = (value) => {
     transitionState.transitionComplete = value;
+    console.log('transitionState.transitionComplete', transitionState.transitionComplete);
   };
 
   return {

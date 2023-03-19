@@ -1,7 +1,7 @@
 <template>
     <div class="w-full flex flex-col justify-between items-stretch lg:justify-around">
         <div class=" lg:w-1/12 lg:h-full my-2 sm:my-4" ref="container" v-if="width < 1024">
-            <MovingText :play="play" />
+            <MovingText :play="play" text="About Me" start="top" />
         </div>
         <div class="flex flex-col justify-start items-center lg:justify-center gap-5 2xl:gap-14 4xl:gap-20 6xl:gap-24 lg:w-full">
             <div class="w-full flex justify-between items-center">
@@ -26,7 +26,7 @@
             </ul>
         </div>
         <div class=" lg:w-1/12 lg:h-full xl:ml-8" ref="container" v-if="width >= 1024">
-            <MovingText :play="play" />
+            <MovingText :play="play" text="About Me" start="top" />
         </div>
     </div>
 </template>
