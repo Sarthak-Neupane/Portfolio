@@ -16,8 +16,20 @@
          </div>
       </div>
       <div class="text-purple font-bold text-xl w-full flex justify-between items-center" v-if="getWidth">
-         <button class="flex-1 py-5" @click="carouselPrevious"> &#60 Previous </button>
-         <button class="flex-1 py-5" @click="carouselNext"> Next &#62 </button>
+         <button class="flex-1 py-5" @click="carouselPrevious">
+            <ClientOnly>
+               <template #fallback>
+                  <p>Loading Icon...</p>
+               </template>
+               <Icon name="uil:arrow-left" />
+            </ClientOnly> Previous
+         </button>
+         <button class="flex-1 py-5" @click="carouselNext"> Next <ClientOnly>
+               <template #fallback>
+                  <p>Loading Icon...</p>
+               </template>
+               <Icon name="uil:arrow-right" />
+            </ClientOnly> </button>
       </div>
    </section>
 </template>

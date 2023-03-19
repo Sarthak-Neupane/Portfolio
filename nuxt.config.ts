@@ -18,12 +18,16 @@ export default defineNuxtConfig({
           Poppins: [400, 500, 600, 700],
         },
         display: "swap",
-        preconnect: true,
-        preload: true,
+        download: true,
+        base64: false,
+        prefetch: false,
+        preconnect: false,
+        preload: false,
       },
     ],
     "@nuxt/image-edge",
     '@pinia/nuxt',
+    'nuxt-icon',
   ],
   vite: {
     plugins: [

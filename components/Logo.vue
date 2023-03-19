@@ -1,9 +1,14 @@
 <template>
     <div class="w-full flex justify-between items-center py-5">
-        <div class="flex-0" v-if="width >= 768" v-show="appear" ref="routeOptionOne">
+        <div class="flex-0" v-if="getWidth >= 648" v-show="appear" ref="routeOptionOne">
             <NuxtLink
                 class="px-3 text-xs sm:text-base md:text-lg lg:text-sm 2xl:text-base 4xl:text-xl 6xl:text-2xl font-semibold"
-                :to="getRouteLink(getTheRoute('previous'))" :class="getColor(getTheRoute('previous'))"> &#60-- {{
+                :to="getRouteLink(getTheRoute('previous'))" :class="getColor(getTheRoute('previous'))"> <ClientOnly>
+                     <template #fallback>
+                        <p>Loading Icon...</p>
+                     </template>
+                     <Icon name="uil:arrow-left" />
+                  </ClientOnly> {{
                     getTheRoute('previous') }} </NuxtLink>
         </div>
         <div class="flex-1 flex justify-center items-center lg:gap-4">
@@ -19,11 +24,16 @@
                 </div>
             </div>
         </div>
-        <div class="flex-0" v-if="width >= 768" v-show="appear" ref="routeOptionTwo">
+        <div class="flex-0" v-if="getWidth >= 648" v-show="appear" ref="routeOptionTwo">
             <NuxtLink
                 class="px-3 text-xs sm:text-base md:text-lg lg:text-sm 2xl:text-base 4xl:text-xl 6xl:text-2xl font-semibold"
                 :to="getRouteLink(getTheRoute('next'))" :class="getColor(getTheRoute('next'))">{{
-                    getTheRoute('next') }} --&#62</NuxtLink>
+                    getTheRoute('next') }} <ClientOnly>
+                     <template #fallback>
+                        <p>Loading Icon...</p>
+                     </template>
+                     <Icon name="uil:arrow-right" />
+                  </ClientOnly></NuxtLink>
         </div>
     </div>
 </template>
@@ -43,12 +53,16 @@ const routeOptionTwo = ref(null)
 watch(() => transition.transitionState.transitionComplete, (val) => {
     if (val) {
         appear.value = true
-        gsap.fromTo(routeOptionOne.value, { x: -100, opacity: 0, pointerEvents: 'auto' }, { x: 0, opacity: 1, duration: 0.5 })
-        gsap.fromTo(routeOptionTwo.value, { x: 100, opacity: 0, pointerEvents: 'auto' }, { x: 0, opacity: 1, duration: 0.5 })
+        if (routeOptionOne.value && routeOptionTwo.value) {
+            gsap.fromTo(routeOptionOne.value, { x: -100, opacity: 0, pointerEvents: 'auto' }, { x: 0, opacity: 1, duration: 0.5 })
+            gsap.fromTo(routeOptionTwo.value, { x: 100, opacity: 0, pointerEvents: 'auto' }, { x: 0, opacity: 1, duration: 0.5 })
+        }
     } else {
-        // appear.value = false
-        gsap.fromTo(routeOptionOne.value, { x: 0, opacity: 1, pointerEvents: 'none' }, { x: -100, opacity: 0, duration: 0.5 })
-        gsap.fromTo(routeOptionTwo.value, { x: 0, opacity: 1, pointerEvents: 'none' }, { x: 100, opacity: 0, duration: 0.5 })
+        if (routeOptionOne.value && routeOptionTwo.value){
+            // appear.value = false
+            gsap.fromTo(routeOptionOne.value, { x: 0, opacity: 1, pointerEvents: 'none' }, { x: -100, opacity: 0, duration: 0.5 })
+            gsap.fromTo(routeOptionTwo.value, { x: 0, opacity: 1, pointerEvents: 'none' }, { x: 100, opacity: 0, duration: 0.5 })
+        }
     }
 })
 
@@ -56,6 +70,10 @@ const route = useRoute()
 const router = useRouter()
 
 const { width } = useWindowSize()
+
+const getWidth = () => {
+    return width.value
+}
 let currentRoute = ''
 
 const transform = ref(null)
