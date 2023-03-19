@@ -9,13 +9,13 @@
                 allowFullScreen></iframe>
             <ul class="w-full flex justify-between items-center gap-1">
                 <li class="bg-purple py-5 flex-1 text-center text-lg sm:text-xl md:text-2xl xl:text-3xl font-semibold text-light">
-                    <NuxtLink to="/"> Work </NuxtLink>
+                    <NuxtLink to="/" @click="clearError()"> Work </NuxtLink>
                 </li>
                 <li class="bg-yellow py-5 flex-1 text-center text-lg sm:text-xl md:text-2xl xl:text-3xl font-semibold text-light">
-                    <NuxtLink to="/about"> About </NuxtLink>
+                    <NuxtLink to="/about" @click="clearError()"> About </NuxtLink>
                 </li>
                 <li class="bg-green py-5 flex-1 text-center text-lg sm:text-xl md:text-2xl xl:text-3xl font-semibold text-light">
-                    <NuxtLink to="/contact"> Contact </NuxtLink>
+                    <NuxtLink to="/contact" @click="clearError()"> Contact </NuxtLink>
                 </li>
             </ul>
         </div>
@@ -30,5 +30,4 @@ const props = defineProps({
     }
 })
 
-console.log(props.error)
 </script>

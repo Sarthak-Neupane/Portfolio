@@ -1,6 +1,6 @@
 <template>
     <div class="w-full flex justify-between items-center py-5">
-        <div class="flex-0" v-if="getWidth >= 648" v-show="appear" ref="routeOptionOne">
+        <div class="flex-0" v-if="getAppearance" v-show="appear" ref="routeOptionOne">
             <NuxtLink
                 class="px-3 text-xs sm:text-base md:text-lg lg:text-sm 2xl:text-base 4xl:text-xl 6xl:text-2xl font-semibold"
                 :to="getRouteLink(getTheRoute('previous'))" :class="getColor(getTheRoute('previous'))"> <ClientOnly>
@@ -24,7 +24,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex-0" v-if="getWidth >= 648" v-show="appear" ref="routeOptionTwo">
+        <div class="flex-0" v-if="getAppearance" v-show="appear" ref="routeOptionTwo">
             <NuxtLink
                 class="px-3 text-xs sm:text-base md:text-lg lg:text-sm 2xl:text-base 4xl:text-xl 6xl:text-2xl font-semibold"
                 :to="getRouteLink(getTheRoute('next'))" :class="getColor(getTheRoute('next'))">{{
@@ -74,6 +74,15 @@ const { width } = useWindowSize()
 const getWidth = computed(()=>{
     return width.value
 })
+
+const getAppearance = computed(()=>{
+    if (width.value >= 648) {
+        return true
+    } else {
+        return false
+    }
+})
+
 let currentRoute = ''
 
 const transform = ref(null)

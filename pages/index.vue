@@ -40,7 +40,6 @@ import { toRefs } from 'vue';
 import { useWindowSize } from '@vueuse/core';
 
 definePageMeta({
-   title: 'Work',
    name: 'Work',
    pageTransition: transitionConfig,
 })

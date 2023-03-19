@@ -3,31 +3,31 @@
         ref="container">
         <div class="flex justify-center items-center h-full min-w-fit lg:min-w-[25%] 2xl:min-w-[35%] px-1 contentBox">
             <NuxtLink to="/contact">
-                <nuxt-img :src="getImageUrl('ficfacfoe')" fit="cover" class="aspect-square h-full w-full lg:grayscale" ref="Image1"
+                <nuxt-img :src="getImageUrl('ficfacfoe')" alt="FICFACFOE" fit="cover" class="aspect-square h-full w-full lg:grayscale" ref="Image1"
                     data-hover="1" data-name="FICFACFOE" @mouseenter="hoverImage" @mouseout="unHoverImage" />
             </NuxtLink>
         </div>
         <div class="flex justify-center items-center h-full min-w-fit lg:min-w-[25%] 2xl:min-w-[35%]  px-1 contentBox">
             <NuxtLink to="/contact">
-                <nuxt-img :src="getImageUrl('goalgram')" fit="cover" class="aspect-square h-full w-full lg:grayscale" ref="Image2" data-hover="2"
+                <nuxt-img :src="getImageUrl('goalgram')" alt="GOALGRAM" fit="cover" class="aspect-square h-full w-full lg:grayscale" ref="Image2" data-hover="2"
                     data-name="GOALGRAM" @mouseenter="hoverImage" @mouseout="unHoverImage" />
             </NuxtLink>
         </div>
         <div class="flex justify-center items-center h-full min-w-fit lg:min-w-[25%] 2xl:min-w-[35%]  px-1 contentBox">
             <NuxtLink to="/contact">
-                <nuxt-img :src="getImageUrl('rooms')" fit="cover" class="aspect-square h-full w-full lg:grayscale" ref="Imag3" data-hover="3"
+                <nuxt-img :src="getImageUrl('rooms')" alt="ROOMS" fit="cover" class="aspect-square h-full w-full lg:grayscale" ref="Imag3" data-hover="3"
                 data-name="ROOMS" @mouseenter="hoverImage" @mouseout="unHoverImage" />
             </NuxtLink>
         </div>
         <div class="flex justify-center items-center h-full min-w-fit lg:min-w-[25%] 2xl:min-w-[35%]  px-1 contentBox">
             <NuxtLink to="/contact">
-                <nuxt-img :src="getImageUrl('chillflix')" fit="cover" class="aspect-square h-full w-full lg:grayscale" ref="Imag4" data-hover="4"
+                <nuxt-img :src="getImageUrl('chillflix')" alt="CHILLFLIX" fit="cover" class="aspect-square h-full w-full lg:grayscale" ref="Imag4" data-hover="4"
                     data-name="CHILLFLIX" @mouseenter="hoverImage" @mouseout="unHoverImage" />
             </NuxtLink>
         </div>
         <div class="flex justify-center items-center h-full min-w-fit lg:min-w-[25%] 2xl:min-w-[35%]  px-1 contentBox">
             <NuxtLink to="/contact">
-                <nuxt-img :src="getImageUrl('others')" fit="cover" class="aspect-square h-full w-full lg:grayscale" ref="Image5" data-hover="5"
+                <nuxt-img :src="getImageUrl('others')" fit="cover" alt="OTHERS" class="aspect-square h-full w-full lg:grayscale" ref="Image5" data-hover="5"
                     data-name="OTHERS" @mouseenter="hoverImage" @mouseout="unHoverImage" />
             </NuxtLink>
         </div>
@@ -42,7 +42,7 @@ import { useWindowSize } from '@vueuse/core';
 const { width } = useWindowSize();
 
 const getImageUrl = (name)=>{
-    if(width <= 768){
+    if(width.value <= 768){
         return `/${name}/small.jpg`
     } else if (width <= 1500){
         return `/${name}/medium.jpg`
