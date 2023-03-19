@@ -1,7 +1,7 @@
 <template>
    <section class="overflow-hidden lg:overflow-hidden lg:min-h-[90vh] h-[90vh] flex flex-col justify-center items-center">
       <div v-if="getWidth" class="w-full flex justify-center items-center bg-purple">
-         <Subtitle headline="Let's Build Together" Subtitle="So I can add it here :)" />
+         <Subtitle headline="Let's Build Together" Subtitle="So I can add it here :)" :nav="true" />
       </div>
       <div class="flex-1 flex-col w-full flex justify-center items-center gap-5 sm:gap-14 md:gap-20 lg:gap-5">
          <div class="flex justify-center items-center w-full">
