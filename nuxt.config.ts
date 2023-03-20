@@ -5,9 +5,15 @@ export default defineNuxtConfig({
     transpile: ["gsap", "three"],
   },
   modules: [
+    ['@unlighthouse/nuxt', {
+      scanner: {
+        // simulate a desktop device
+        device: 'desktop',
+      }
+    }],
     ['nuxt-delay-hydration', {
-      debug: process.env.NODE_ENV === 'development',
-      mode: 'init',
+      debug: true,
+      mode: 'mount',
     }],
     ['@nuxtjs/robots', {
       UserAgent: '*',

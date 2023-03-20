@@ -1,16 +1,15 @@
 <template>
     <div class="w-full flex justify-between items-center py-5">
-        <div class="flex-0" v-if="getAppearance" v-show="appear" ref="routeOptionOne">
-            <NuxtLink
-                class="px-3 text-xs sm:text-base md:text-lg lg:text-sm 2xl:text-base 4xl:text-xl 6xl:text-2xl font-semibold"
-                :to="getRouteLink(getTheRoute('previous'))" :class="getColor(getTheRoute('previous'))"> <ClientOnly>
-                     <template #fallback>
-                        <p>Loading Icon...</p>
-                     </template>
-                     <Icon name="uil:arrow-left" />
-                  </ClientOnly> {{
-                    getTheRoute('previous') }} </NuxtLink>
-        </div>
+        <ClientOnly>
+            <div class="flex-0" v-if="getAppearance" v-show="appear" ref="routeOptionOne">
+                <NuxtLink
+                    class="px-3 text-xs sm:text-base md:text-lg lg:text-sm 2xl:text-base 4xl:text-xl 6xl:text-2xl font-semibold"
+                    :to="getRouteLink(getTheRoute('previous'))" :class="getColor(getTheRoute('previous'))">
+                    <Icon name="uil:arrow-left" />
+                    {{ getTheRoute('previous') }}
+                </NuxtLink>
+            </div>
+        </ClientOnly>
         <div class="flex-1 flex justify-center items-center lg:gap-4">
             <h1 class="font-bold text-lg sm:text-2xl lg:text-xl 2xl:text-2xl 4xl:text-4xl 6xl:text-6xl">Sarthak
                 Neupane</h1>
@@ -24,17 +23,16 @@
                 </div>
             </div>
         </div>
-        <div class="flex-0" v-if="getAppearance" v-show="appear" ref="routeOptionTwo">
-            <NuxtLink
-                class="px-3 text-xs sm:text-base md:text-lg lg:text-sm 2xl:text-base 4xl:text-xl 6xl:text-2xl font-semibold"
-                :to="getRouteLink(getTheRoute('next'))" :class="getColor(getTheRoute('next'))">{{
-                    getTheRoute('next') }} <ClientOnly>
-                     <template #fallback>
-                        <p>Loading Icon...</p>
-                     </template>
-                     <Icon name="uil:arrow-right" />
-                  </ClientOnly></NuxtLink>
-        </div>
+        <ClientOnly>
+            <div class="flex-0" v-if="getAppearance" v-show="appear" ref="routeOptionTwo">
+                <NuxtLink
+                    class="px-3 text-xs sm:text-base md:text-lg lg:text-sm 2xl:text-base 4xl:text-xl 6xl:text-2xl font-semibold"
+                    :to="getRouteLink(getTheRoute('next'))" :class="getColor(getTheRoute('next'))">{{
+                        getTheRoute('next') }}
+                    <Icon name="uil:arrow-right" />
+                </NuxtLink>
+            </div>
+        </ClientOnly>
     </div>
 </template>
 
@@ -58,7 +56,7 @@ watch(() => transition.transitionState.transitionComplete, (val) => {
             gsap.fromTo(routeOptionTwo.value, { x: 100, opacity: 0, pointerEvents: 'auto' }, { x: 0, opacity: 1, duration: 0.5 })
         }
     } else {
-        if (routeOptionOne.value && routeOptionTwo.value){
+        if (routeOptionOne.value && routeOptionTwo.value) {
             // appear.value = false
             gsap.fromTo(routeOptionOne.value, { x: 0, opacity: 1, pointerEvents: 'none' }, { x: -100, opacity: 0, duration: 0.5 })
             gsap.fromTo(routeOptionTwo.value, { x: 0, opacity: 1, pointerEvents: 'none' }, { x: 100, opacity: 0, duration: 0.5 })
@@ -71,11 +69,11 @@ const router = useRouter()
 
 const { width } = useWindowSize()
 
-const getWidth = computed(()=>{
+const getWidth = computed(() => {
     return width.value
 })
 
-const getAppearance = computed(()=>{
+const getAppearance = computed(() => {
     if (width.value >= 648) {
         return true
     } else {
@@ -100,7 +98,7 @@ router.beforeResolve((to, from, next) => {
 
 const getRouteFirst = computed(() => {
     if (transform.value === null) {
-        return 'WELCOME'
+        return 'LOADING'
     } else if (transform.value) {
         return route.name
     } else {

@@ -1,9 +1,9 @@
 import gsap from 'gsap'
-import { useTransitionStore } from '@/store/transition'
 import { useTransitionComposable } from '../composables/useTransitionComposable'
 import { useTransformComposable } from '../composables/useTransformComposable'
 const { toggleTransitionComplete } = useTransitionComposable()
 const { transformComplete, toggleTransformComplete } = useTransformComposable()
+
 
 const pageTransition = {
   name: 'page-transiton',
@@ -16,7 +16,6 @@ const pageTransition = {
       .timeline({
         paused: true,
         onComplete () {
-          // toggleTransitionComplete(true)
           done()
         }
       })

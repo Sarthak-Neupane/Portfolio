@@ -5,35 +5,35 @@
             <NuxtLink to="/contact">
                 <nuxt-img :src="getImageUrl('ficfacfoe')" format="webp" alt="FICFACFOE" fit="cover"
                     class="aspect-square h-full w-full lg:grayscale" ref="Image1" data-hover="1" data-name="FICFACFOE"
-                    @mouseenter="hoverImage" @mouseout="unHoverImage" />
+                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true" />
             </NuxtLink>
         </div>
         <div class="flex justify-center items-center h-full min-w-fit lg:min-w-[25%] 2xl:min-w-[35%]  px-1 contentBox">
             <NuxtLink to="/contact">
                 <nuxt-img :src="getImageUrl('goalgram')" format="webp" alt="GOALGRAM" fit="cover"
                     class="aspect-square h-full w-full lg:grayscale" ref="Image2" data-hover="2" data-name="GOALGRAM"
-                    @mouseenter="hoverImage" @mouseout="unHoverImage" />
+                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true" />
             </NuxtLink>
         </div>
         <div class="flex justify-center items-center h-full min-w-fit lg:min-w-[25%] 2xl:min-w-[35%]  px-1 contentBox">
             <NuxtLink to="/contact">
                 <nuxt-img :src="getImageUrl('rooms')" format="webp" alt="ROOMS" fit="cover"
                     class="aspect-square h-full w-full lg:grayscale" ref="Imag3" data-hover="3" data-name="ROOMS"
-                    @mouseenter="hoverImage" @mouseout="unHoverImage" />
+                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true" />
             </NuxtLink>
         </div>
         <div class="flex justify-center items-center h-full min-w-fit lg:min-w-[25%] 2xl:min-w-[35%]  px-1 contentBox">
             <NuxtLink to="/contact">
                 <nuxt-img :src="getImageUrl('chillflix')" format="webp" alt="CHILLFLIX" fit="cover"
                     class="aspect-square h-full w-full lg:grayscale" ref="Imag4" data-hover="4" data-name="CHILLFLIX"
-                    @mouseenter="hoverImage" @mouseout="unHoverImage" />
+                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true" />
             </NuxtLink>
         </div>
         <div class="flex justify-center items-center h-full min-w-fit lg:min-w-[25%] 2xl:min-w-[35%]  px-1 contentBox">
             <NuxtLink to="/contact">
                 <nuxt-img :src="getImageUrl('others')" format="webp" fit="cover" alt="OTHERS"
                     class="aspect-square h-full w-full lg:grayscale" ref="Image5" data-hover="5" data-name="OTHERS"
-                    @mouseenter="hoverImage" @mouseout="unHoverImage" />
+                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true" />
             </NuxtLink>
         </div>
     </div>
@@ -48,14 +48,8 @@ const { width } = useWindowSize();
 
 const getImageUrl = (name) => {
     return `/${name}/medium.jpg`;
-    // if (width.value >=1500) {
-    //     return `/${name}/large.jpg`
-    // } else if (width.value >= 768) {
-    //     return `/${name}/medium.jpg`
-    // } else {
-    //     return `/${name}/small.jpg`
-    // }
 }
+
 
 const props = defineProps({
     play: {

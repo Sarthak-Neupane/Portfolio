@@ -1,8 +1,10 @@
 <template>
    <section class="overflow-hidden lg:overflow-hidden lg:min-h-[90vh] h-[90vh] flex flex-col justify-center items-center">
-      <div v-if="getWidth" class="w-full flex justify-center items-center bg-purple">
-         <Subtitle headline="Let's Build Together" Subtitle="So I can add it here :)" :nav="true" />
-      </div>
+      <ClientOnly>
+         <div v-if="getWidth" class="w-full flex justify-center items-center bg-purple">
+            <Subtitle headline="Let's Build Together" Subtitle="So I can add it here :)" :nav="true" />
+         </div>
+      </ClientOnly>
       <div class="flex-1 flex-col w-full flex justify-center items-center gap-5 sm:gap-14 md:gap-20 lg:gap-5">
          <div class="flex justify-center items-center w-full">
             <Header :play="playHeader" :letters="letters">
@@ -15,22 +17,18 @@
             </Carousel>
          </div>
       </div>
-      <div class="text-purple font-bold text-xl w-full flex justify-between items-center" v-if="getWidth">
-         <button class="flex-1 py-5" @click="carouselPrevious">
-            <ClientOnly>
-               <template #fallback>
-                  <p>Loading Icon...</p>
-               </template>
+      <ClientOnly>
+         <div class="text-purple font-bold text-xl w-full flex justify-between items-center" v-if="getWidth">
+            <button class="flex-1 py-5" @click="carouselPrevious">
+
                <Icon name="uil:arrow-left" />
-            </ClientOnly> Previous
-         </button>
-         <button class="flex-1 py-5" @click="carouselNext"> Next <ClientOnly>
-               <template #fallback>
-                  <p>Loading Icon...</p>
-               </template>
+               Previous
+            </button>
+            <button class="flex-1 py-5" @click="carouselNext"> Next
                <Icon name="uil:arrow-right" />
-            </ClientOnly> </button>
-      </div>
+            </button>
+         </div>
+      </ClientOnly>
    </section>
 </template>
 
