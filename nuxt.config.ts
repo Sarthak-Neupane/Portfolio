@@ -12,13 +12,13 @@ export default defineNuxtConfig({
       }
     }],
     ['nuxt-delay-hydration', {
-      debug: true,
+      debug: process.env.NODE_ENV === 'development',
       mode: 'mount',
     }],
-    ['@nuxtjs/robots', {
-      UserAgent: '*',
-      Allow: '*',
-    }],
+    // ['@nuxtjs/robots', {
+    //   UserAgent: '*',
+    //   Allow: '*',
+    // }],
     '@nuxtjs/fontaine',
     "@nuxtjs/tailwindcss",
     [

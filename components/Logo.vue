@@ -1,6 +1,14 @@
 <template>
     <div class="w-full flex justify-between items-center py-5">
         <ClientOnly>
+            <template #fallback>
+                <NuxtLink
+                    class="px-3 text-xs sm:text-base md:text-lg lg:text-sm 2xl:text-base 4xl:text-xl 6xl:text-2xl font-semibold pointer-events-none hidden"
+                    :to="getRouteLink(getTheRoute('previous'))" :class="getColor(getTheRoute('previous'))">
+                    <Icon name="uil:arrow-left" />
+                    {{ getTheRoute('previous') }}
+                </NuxtLink>
+            </template>
             <div class="flex-0" v-if="getAppearance" v-show="appear" ref="routeOptionOne">
                 <NuxtLink
                     class="px-3 text-xs sm:text-base md:text-lg lg:text-sm 2xl:text-base 4xl:text-xl 6xl:text-2xl font-semibold"
@@ -24,6 +32,14 @@
             </div>
         </div>
         <ClientOnly>
+            <template #fallback>
+                <NuxtLink
+                    class="px-3 text-xs sm:text-base md:text-lg lg:text-sm 2xl:text-base 4xl:text-xl 6xl:text-2xl font-semibold pointer-events-none hidden"
+                    :to="getRouteLink(getTheRoute('next'))" :class="getColor(getTheRoute('next'))">{{
+                        getTheRoute('next') }}
+                    <Icon name="uil:arrow-right" />
+                </NuxtLink>
+            </template>
             <div class="flex-0" v-if="getAppearance" v-show="appear" ref="routeOptionTwo">
                 <NuxtLink
                     class="px-3 text-xs sm:text-base md:text-lg lg:text-sm 2xl:text-base 4xl:text-xl 6xl:text-2xl font-semibold"

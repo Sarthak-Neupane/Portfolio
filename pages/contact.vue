@@ -22,7 +22,6 @@
                <button class="flex-1 py-3 text-yellow">
                   <NuxtLink to="/about"> About
                      <Icon name="uil:arrow-right" />
-
                   </NuxtLink>
                </button>
             </div>
@@ -52,6 +51,52 @@ import gsap from 'gsap';
 
 useHead({
    title: 'Contact',
+   meta: [
+      {
+         name: 'description',
+         content: 'Lets Build together',
+      },
+      {
+         name: 'og:title',
+         content: 'Sarthak Neupane | Contact '
+      },
+      {
+         name: 'og:description',
+         content: 'Lets Build together'
+      },
+      {
+         name: 'og:url',
+         content: 'https://sarthakneupane.com/contact'
+      },
+      {
+         name: 'og:image',
+         content: '/og.png'
+      },
+      {
+         name: 'og:type',
+         content: 'website'
+      },
+      {
+         name: 'twitter:title',
+         content: 'Sarthak Neupane | Contact '
+      },
+      {
+         name: 'twitter:description',
+         content: 'Lets Build together'
+      },
+      {
+         name: 'twitter:url',
+         content: 'https://sarthakneupane.com/contact'
+      },
+      {
+         name: 'twitter:image',
+         content: '/og.png'
+      },
+      {
+         name: 'twitter:card',
+         content: 'summary_large_image'
+      },
+   ],
 })
 
 definePageMeta({

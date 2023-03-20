@@ -39,6 +39,52 @@ import { useWindowSize } from '@vueuse/core';
 
 useHead({
    title: 'Work',
+   meta: [
+      {
+         name: 'description',
+         content: 'View the List of Frontend Projects',
+      },
+      {
+         name: 'og:title',
+         content: 'Sarthak Neupane | Projects '
+      },
+      {
+         name: 'og:description',
+         content: 'View the List of Frontend Projects'
+      },
+      {
+         name: 'og:url',
+         content: 'https://sarthakneupane.com'
+      },
+      {
+         name: 'og:image',
+         content: '/og.png'
+      },
+      {
+         name: 'og:type',
+         content: 'website'
+      },
+      {
+         name: 'twitter:title',
+         content: 'Sarthak Neupane | Projects '
+      },
+      {
+         name: 'twitter:description',
+         content: 'View the List of Frontend Projects'
+      },
+      {
+         name: 'twitter:url',
+         content: 'https://sarthakneupane.com/'
+      },
+      {
+         name: 'twitter:image',
+         content: '/og.png'
+      },
+      {
+         name: 'twitter:card',
+         content: 'summary_large_image'
+      },
+   ],
 })
 
 definePageMeta({
