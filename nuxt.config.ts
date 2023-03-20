@@ -1,15 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import glsl from "vite-plugin-glsl";
 export default defineNuxtConfig({
-  app: {
-    head: {
-      
-    },
-  },
   build: {
     transpile: ["gsap", "three"],
   },
   modules: [
+    ['nuxt-delay-hydration', {
+      debug: process.env.NODE_ENV === 'development',
+      mode: 'init',
+    }],
+    ['@nuxtjs/robots', {
+      UserAgent: '*',
+      Allow: '*',
+    }],
+    '@nuxtjs/fontaine',
     "@nuxtjs/tailwindcss",
     [
       "@nuxtjs/google-fonts",

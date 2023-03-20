@@ -5,19 +5,23 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "analyze": "nuxt build --analyze"
   },
   "devDependencies": {
     "@nuxt/image": "^0.7.1",
+    "@nuxtjs/fontaine": "^0.2.4",
     "@nuxtjs/google-fonts": "^3.0.0-1",
     "@nuxtjs/tailwindcss": "^6.4.1",
     "autoprefixer": "^10.4.14",
     "nuxt": "^3.2.3",
+    "nuxt-delay-hydration": "^1.1.4",
     "nuxt-icon": "^0.3.3",
     "vite-plugin-glsl": "^1.1.2"
   },
   "dependencies": {
     "@nuxt/image-edge": "^1.0.0-27968280.9739e4d",
+    "@nuxtjs/robots": "^3.0.0",
     "@pinia/nuxt": "^0.4.7",
     "@vueuse/core": "^9.13.0",
     "gsap": "^3.11.4",

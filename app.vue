@@ -37,6 +37,9 @@ useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} - Sarthak Neupane` : 'Sarthak Neupane';
   },
+  htmlAttrs: {
+    lang: 'en',
+  },
   link: [
     {
       rel: "apple-touch-icon-precomposed",
