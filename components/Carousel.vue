@@ -47,13 +47,14 @@ import { useWindowSize } from '@vueuse/core';
 const { width } = useWindowSize();
 
 const getImageUrl = (name) => {
-    if (width.value >=1500) {
-        return `/${name}/large.jpg`
-    } else if (width.value >= 768) {
-        return `/${name}/medium.jpg`
-    } else {
-        return `/${name}/small.jpg`
-    }
+    return `/${name}/medium.jpg`;
+    // if (width.value >=1500) {
+    //     return `/${name}/large.jpg`
+    // } else if (width.value >= 768) {
+    //     return `/${name}/medium.jpg`
+    // } else {
+    //     return `/${name}/small.jpg`
+    // }
 }
 
 const props = defineProps({
