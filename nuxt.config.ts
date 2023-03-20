@@ -5,21 +5,30 @@ export default defineNuxtConfig({
     transpile: ["gsap", "three"],
   },
   modules: [
-    ['@unlighthouse/nuxt', {
-      scanner: {
-        // simulate a desktop device
-        device: 'desktop',
-      }
-    }],
-    ['nuxt-delay-hydration', {
-      debug: process.env.NODE_ENV === 'development',
-      mode: 'mount',
-    }],
-    // ['@nuxtjs/robots', {
-    //   UserAgent: '*',
-    //   Allow: '*',
-    // }],
-    '@nuxtjs/fontaine',
+    [
+      "@unlighthouse/nuxt",
+      {
+        scanner: {
+          // simulate a desktop device
+          device: "desktop",
+        },
+      },
+    ],
+    [
+      "nuxt-delay-hydration",
+      {
+        debug: process.env.NODE_ENV === "development",
+        mode: "mount",
+      },
+    ],
+    [
+      "@nuxtjs/robots",
+      {
+        UserAgent: "*",
+        Allow: "*",
+      },
+    ],
+    "@nuxtjs/fontaine",
     "@nuxtjs/tailwindcss",
     [
       "@nuxtjs/google-fonts",
