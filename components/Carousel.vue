@@ -43,6 +43,7 @@
 import gsap from 'gsap';
 import { toRefs } from 'vue';
 import { useWindowSize } from '@vueuse/core';
+import { useResizeObserver } from '@vueuse/core';
 
 const { width } = useWindowSize();
 
@@ -167,6 +168,16 @@ watch(prev, (val) => {
     }
 })
 
+useResizeObserver(container, (entries) => {
+    if (loop.value) {
+        if (width.value <= 1024) {
+            loop.value.toIndex(0, { duration: 1, ease: 'power2.inOut' })
+            loop.value.pause()
+        } else {
+            loop.value.play()
+        }
+    }
+})
 
 onUnmounted(() => {
     if (ctx.value) {

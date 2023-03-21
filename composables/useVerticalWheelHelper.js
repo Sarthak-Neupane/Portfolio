@@ -140,6 +140,7 @@ export const useVerticalWheelHelper = (items, config) => {
       timeWrap = gsap.utils.wrap(0, tl.duration())
     },
     refresh = deep => {
+      console.log('refresh')
       let progress = tl.progress()
       tl.progress(0, true)
       populateHeights()
@@ -154,7 +155,7 @@ export const useVerticalWheelHelper = (items, config) => {
   populateHeights()
   populateTimeline()
   populateOffsets()
-  window.addEventListener('resize', () => refresh(true))
+  // window.addEventListener('resize', () => refresh(true))
   function toIndex (index, vars) {
     vars = clone(vars)
     Math.abs(index - curIndex) > length / 2 &&

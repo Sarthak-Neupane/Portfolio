@@ -1,5 +1,5 @@
 <template>
-   <section class="overflow-hidden lg:overflow-hidden lg:min-h-[90vh] h-[90vh] flex flex-col justify-center items-center">
+   <section class="overflow-hidden lg:overflow-hidden lg:min-h-[90vh] h-[90vh] flex flex-col justify-center items-center" ref="section">
       <ClientOnly>
          <div v-if="getWidth" class="w-full flex justify-center items-center bg-purple">
             <Subtitle headline="Let's Build Together" Subtitle="So I can add it here :)" :nav="true" />
@@ -7,7 +7,7 @@
       </ClientOnly>
       <div class="flex-1 flex-col w-full flex justify-center items-center gap-5 sm:gap-14 md:gap-20 lg:gap-5">
          <div class="flex justify-center items-center w-full">
-            <Header :play="playHeader" :letters="letters">
+            <Header :play="playHeader" :letters="letters" :resized="resized">
             </Header>
          </div>
          <div
@@ -36,6 +36,7 @@
 import transitionConfig from '../helpers/transition';
 import { toRefs } from 'vue';
 import { useWindowSize } from '@vueuse/core';
+import { useResizeObserver } from '@vueuse/core';
 
 useHead({
    title: 'Work',
@@ -100,6 +101,8 @@ const getWidth = computed(() => {
 
 const transition = useTransitionComposable()
 const transitionComplete = toRefs(transition.transitionState).transitionComplete
+
+const section = ref(null)
 
 const playHeader = ref(false)
 const playCarousel = ref(false)
@@ -176,5 +179,16 @@ const carouselNext = () => {
 const carouselPrevious = () => {
    previous.value++
 }
+
+const resized = ref(0)
+
+useResizeObserver(section, (entries)=>{
+   resized.value++
+   if(width.value <= 1024){
+      letters.value = ['F', 'I', 'C', 'F', 'A', 'C', 'F', 'O', 'E', '-']
+   } else {
+      letters.value = ['-', '-', '-', 'W', 'O', 'R', 'K', '-', '-', '-']
+   }
+})
 
 </script>

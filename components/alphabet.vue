@@ -1,5 +1,6 @@
 <template>
-    <div class="overflow-hidden box-border grid text-4xl max-h-9 md:text-6xl md:max-h-[3.75rem] xl:max-h-24 xl:text-8xl 2xl:text-9xl 2xl:max-h-32 font-bold " ref="wheel">
+    <div class="overflow-hidden box-border grid text-4xl max-h-9 md:text-6xl md:max-h-[3.75rem] xl:max-h-24 xl:text-8xl 2xl:text-9xl 2xl:max-h-32 font-bold "
+        ref="wheel">
         <h1 v-for="alph in alphabets" :key="alph" class="letters box-border">{{ alph }}</h1>
     </div>
 </template>
@@ -8,6 +9,11 @@
 <script setup>
 import gsap from 'gsap';
 import { toRefs } from 'vue';
+import { useResizeObserver } from '@vueuse/core';
+import { useWindowSize } from '@vueuse/core';
+
+
+const { width } = useWindowSize();
 
 const props = defineProps({
     alphabet: {
@@ -16,6 +22,10 @@ const props = defineProps({
     },
     play: {
         type: Boolean,
+        required: true
+    },
+    resized: {
+        type: Number,
         required: true
     }
 })
@@ -49,7 +59,7 @@ const createLoop = (val) => {
         letters.value = self.selector('.letters');
         loop.value = useVerticalWheelHelper(letters.value, {
             repeat: -1,
-            paused: true,
+            paused: width.value <= 768 ? true : false,
         })
         if (val) {
             loop.value.play()
@@ -59,21 +69,34 @@ const createLoop = (val) => {
     }, wheel.value)
 }
 
-const convertAndSpin = (alphabet) => {
+const convertAndSpin = (alphabet, duration) => {
     const index = (convertToIndex(alphabet))
-    spin(loop.value, index)
+    spin(loop.value, index, duration)
 }
 
 const convertToIndex = (alphabet) => {
     return alphabets.indexOf(alphabet)
 }
 
-const spin = (wheel, index) => {
-    wheel.toIndex(index, { duration: 1.5, ease: "power2.inOut" });
+const spin = (loop, index, dur) => {
+    loop.toIndex(index, { duration: dur ? dur : 1.5, ease: "power2.inOut" });
 }
 
+
+watchEffect(() => {
+    if (props.resized) {
+        if (loop.value) {
+            let duration = 1
+            convertAndSpin(props.alphabet, duration)
+        }
+    }
+})
+
+
 onUnmounted(() => {
-    ctx.value.revert();
+    if(ctx.value){
+        ctx.value.revert();
+    }
 });
 
 </script>

@@ -21,13 +21,13 @@ export default defineNuxtConfig({
         mode: "mount",
       },
     ],
-    [
-      "@nuxtjs/robots",
-      {
-        UserAgent: "*",
-        Allow: "*",
-      },
-    ],
+    // [
+    //   "@nuxtjs/robots",
+    //   {
+    //     UserAgent: "*",
+    //     Allow: "*",
+    //   },
+    // ],
     "@nuxtjs/fontaine",
     "@nuxtjs/tailwindcss",
     [
