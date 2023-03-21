@@ -21,13 +21,14 @@ export default defineNuxtConfig({
         mode: "mount",
       },
     ],
-    // [
-    //   "@nuxtjs/robots",
-    //   {
-    //     UserAgent: "*",
-    //     Allow: "*",
-    //   },
-    // ],
+    [
+      "@nuxtjs/robots",
+      {
+        UserAgent: "*",
+        Allow: "*",
+      },
+    ],
+    ['@storyblok/nuxt', { accessToken: 'F49GhGgaCT3zL1oikyrWKgtt' }],
     "@nuxtjs/fontaine",
     "@nuxtjs/tailwindcss",
     [
