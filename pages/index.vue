@@ -1,5 +1,5 @@
 <template>
-   <section class="overflow-hidden lg:overflow-hidden lg:min-h-[90vh] h-[90vh] flex flex-col justify-center items-center"
+   <section class="overflow-hidden xl:overflow-hidden xl:min-h-[90vh] h-[90vh] flex flex-col justify-center items-center"
       ref="section">
       <ClientOnly>
          <div v-if="getWidth" class="w-full flex justify-center items-center bg-purple">
@@ -7,25 +7,26 @@
          </div>
       </ClientOnly>
       <div
-         class="flex-1 flex-col w-full flex justify-center items-center gap-5 sm:gap-5 md:gap-7 lg:gap-5 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-full 4xl:max-w-[85%]">
+         class="flex-1 flex-col w-full flex justify-center items-center gap-5 sm:gap-5 md:gap-7 xl:gap-5 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-3xl xl:max-w-full 4xl:max-w-[85%]">
          <div class="flex justify-center items-center w-full">
             <Header :play="playHeader" :letters="letters" :resized="resized">
             </Header>
          </div>
-         <div class="flex justify-center items-center aspect-square lg:aspect-auto lg:max-w-full">
+         <div class="flex justify-center items-center aspect-square xl:aspect-auto xl:max-w-full">
             <Carousel :play="playCarousel" @hover="imageHover" @unHover="imageUnHover" @resume="resumeCarousel"
                @pauseCarousel="pauseCarousel" :next="next" :prev="previous">
             </Carousel>
          </div>
       </div>
       <ClientOnly>
-         <div class="text-purple font-bold text-xl w-full flex justify-between items-center" v-if="getWidth">
-            <button class="flex-1 py-5" @click="carouselPrevious">
-
+         <div
+            class="text-purple font-bold text-xl w-full flex justify-between items-center max-w-xs sm:max-w-md md:max-w-lg lg:max-w-3xl"
+            v-if="getWidth">
+            <button class="flex-1 py-5 lg:text-2xl" @click="carouselPrevious">
                <Icon name="uil:arrow-left" />
                Previous
             </button>
-            <button class="flex-1 py-5" @click="carouselNext"> Next
+            <button class="flex-1 py-5 lg:text-2xl" @click="carouselNext"> Next
                <Icon name="uil:arrow-right" />
             </button>
          </div>
@@ -97,7 +98,7 @@ definePageMeta({
 const { width } = useWindowSize()
 
 const getWidth = computed(() => {
-   return width.value < 1024
+   return width.value <= 1024
 })
 
 const transition = useTransitionComposable()

@@ -1,5 +1,5 @@
 <template>
-    <div class="overflow-hidden box-border grid text-3xl max-h-7 md:text-4xl md:max-h-9 xl:max-h-24 xl:text-8xl 2xl:text-9xl 2xl:max-h-32 6xl:text-[11rem] 6xl:max-h-44 font-bold "
+    <div class="overflow-hidden box-border grid text-3xl max-h-7 md:text-4xl md:max-h-9 lg:text-6xl lg:max-h-16 xl:max-h-24 xl:text-8xl 2xl:text-9xl 2xl:max-h-32 6xl:text-[11rem] 6xl:max-h-44 font-bold "
         ref="wheel">
         <h1 v-for="alph in alphabets" :key="alph" class="letters box-border">{{ alph }}</h1>
     </div>
