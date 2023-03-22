@@ -1,7 +1,7 @@
 <template>
     <div class="w-full flex flex-col justify-between items-stretch xl:justify-around">
         <ClientOnly>
-            <div class=" xl:w-1/12 xl:h-full my-2 sm:my-4" ref="container" v-if="width <= 1024">
+            <div class=" xl:w-1/12 xl:h-full my-2 sm:my-4" ref="container" v-if="width < 1280">
                 <MovingText :play="play" text="About Me" start="top" />
             </div>
         </ClientOnly>
@@ -41,7 +41,7 @@
             </ul>
         </div>
         <ClientOnly>
-            <div class=" lg:w-1/12 lg:h-full xl:ml-8" ref="container" v-if="width > 1024">
+            <div class=" lg:w-1/12 lg:h-full xl:ml-8" ref="container" v-if="width >= 1280">
                 <MovingText :play="play" text="About Me" start="top" />
             </div>
         </ClientOnly>
