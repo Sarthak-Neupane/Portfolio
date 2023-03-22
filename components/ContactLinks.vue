@@ -1,6 +1,6 @@
 <template>
     <ul class="w-full px-4 flex flex-col sm:flex-row justify-center items-start gap-5 text-xl font-semibold" ref="links">
-        <li class="flex justify-center items-center gap-3"> <a href="https://github.com/Sarthak-Neupane" @mouseenter="hovered" @mouseleave="unHovered"
+        <li class="flex justify-center items-center gap-3"> <a href="https://github.com/Sarthak-Neupane/" @mouseenter="hovered" @mouseleave="unHovered"
                 class="relative">Github <div class="absolute top-full -translate-y-full left-0 w-0 bg-green h-0.5" ></div> </a>
             <ClientOnly>
                 <Icon name="uil:github" />
@@ -10,7 +10,7 @@
             </ClientOnly>
         </li>
         <li class="text-yellow flex justify-center items-center gap-3"><a class="relative"
-                href="https://twitter.com/VanTheBast"  @mouseenter="hovered" @mouseleave="unHovered">Twitter <div
+                href="https://twitter.com/VanTheBast/"  @mouseenter="hovered" @mouseleave="unHovered">Twitter <div
                     class="absolute top-full -translate-y-full left-0 w-0 bg-green h-0.5"></div></a>
             <ClientOnly>
                 <template #fallback>

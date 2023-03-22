@@ -6,13 +6,13 @@
         <h2 class="font-semibold md:text-lg lg:text-base 2xl:text-lg 4xl:text-xl 6xl:text-3xl">{{ Subtitle }}</h2>
         <ClientOnly>
             <template #fallback>
-                <NuxtLink to="/contact" class="hidden">
+                <NuxtLink to="/contact/" class="hidden">
                 </NuxtLink>
-                <NuxtLink to="/about" class="hidden"></NuxtLink>
+                <NuxtLink to="/about/" class="hidden"></NuxtLink>
             </template>
             <div v-if="nav" class="flex justify-between items-center h-full w-full font-bold mt-5">
                 <p class="flex-1 text-center text-light">
-                    <NuxtLink to="/contact">
+                    <NuxtLink to="/contact/">
                         <ClientOnly>
                             <template #fallback>
                                 <p>Loading Icon...</p>
@@ -22,7 +22,7 @@
                     </NuxtLink>
                 </p>
                 <p class="flex-1 text-center text-light">
-                    <NuxtLink to="/about">About <ClientOnly>
+                    <NuxtLink to="/about/">About <ClientOnly>
                             <template #fallback>
                                 <p>Loading Icon...</p>
                             </template>
