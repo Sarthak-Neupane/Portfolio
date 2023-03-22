@@ -20,7 +20,7 @@
                   </NuxtLink>
                </button>
                <button class="flex-1 py-3 text-yellow">
-                  <NuxtLink to="/about"> About
+                  <NuxtLink to="/about/"> About
                      <Icon name="uil:arrow-right" />
                   </NuxtLink>
                </button>
@@ -49,54 +49,21 @@ import transitionConfig from '../helpers/transition';
 import { useWindowSize } from '@vueuse/core';
 import gsap from 'gsap';
 
-useHead({
+useSeoMeta({
    title: 'Contact',
    meta: [
       {
          name: 'description',
          content: 'Lets Build together',
       },
-      {
-         name: 'og:title',
-         content: 'Sarthak Neupane | Contact '
-      },
-      {
-         name: 'og:description',
-         content: 'Lets Build together'
-      },
-      {
-         name: 'og:url',
-         content: 'https://sarthakneupane.com/contact'
-      },
-      {
-         name: 'og:image',
-         content: '/og.png'
-      },
-      {
-         name: 'og:type',
-         content: 'website'
-      },
-      {
-         name: 'twitter:title',
-         content: 'Sarthak Neupane | Contact '
-      },
-      {
-         name: 'twitter:description',
-         content: 'Lets Build together'
-      },
-      {
-         name: 'twitter:url',
-         content: 'https://sarthakneupane.com/contact'
-      },
-      {
-         name: 'twitter:image',
-         content: '/og.png'
-      },
-      {
-         name: 'twitter:card',
-         content: 'summary_large_image'
-      },
    ],
+})
+
+defineOgImageStatic({
+   component: 'MyOgImage',
+   title: 'Contact | Sarthak Neupane',
+   content: 'Frontend Developer - Vuejs | Nuxtjs',
+   backgroundColor: 'bg-[#7AC74F]',
 })
 
 definePageMeta({

@@ -1,7 +1,7 @@
 <template>
     <div class="flex justify-between items-center overflow-hidden h-full w-full" ref="container">
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit px-1 contentBox">
-            <NuxtLink to="/contact" class="w-full h-full aspect-square flex justify-center items-center">
+            <NuxtLink to="/contact/" class="w-full h-full aspect-square flex justify-center items-center">
                 <nuxt-img :src="getImageUrl('ficfacfoe')" format="webp" alt="FICFACFOE" fit="cover"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Image1" data-hover="1" data-name="FICFACFOE"
                     @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
@@ -9,7 +9,7 @@
             </NuxtLink>
         </div>
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit  px-1 contentBox">
-            <NuxtLink to="/contact" class="w-full h-full aspect-square flex justify-center items-center">
+            <NuxtLink to="/contact/" class="w-full h-full aspect-square flex justify-center items-center">
                 <nuxt-img :src="getImageUrl('goalgram')" format="webp" alt="GOALGRAM" fit="cover"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Image2" data-hover="2" data-name="GOALGRAM"
                     @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
@@ -17,7 +17,7 @@
             </NuxtLink>
         </div>
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit px-1 contentBox">
-            <NuxtLink to="/contact" class="w-full h-full aspect-square flex justify-center items-center">
+            <NuxtLink to="/contact/" class="w-full h-full aspect-square flex justify-center items-center">
                 <nuxt-img :src="getImageUrl('rooms')" format="webp" alt="ROOMS" fit="cover"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Imag3" data-hover="3" data-name="ROOMS"
                     @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
@@ -25,7 +25,7 @@
             </NuxtLink>
         </div>
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit   px-1 contentBox">
-            <NuxtLink to="/contact" class="w-full h-full aspect-square flex justify-center items-center">
+            <NuxtLink to="/contact/" class="w-full h-full aspect-square flex justify-center items-center">
                 <nuxt-img :src="getImageUrl('chillflix')" format="webp" alt="CHILLFLIX" fit="cover"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Imag4" data-hover="4" data-name="CHILLFLIX"
                     @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
@@ -33,7 +33,7 @@
             </NuxtLink>
         </div>
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit   px-1 contentBox">
-            <NuxtLink to="/contact" class="w-full h-full aspect-square flex justify-center items-center">
+            <NuxtLink to="/contact/" class="w-full h-full aspect-square flex justify-center items-center">
                 <nuxt-img :src="getImageUrl('others')" format="webp" fit="cover" alt="OTHERS"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Image5" data-hover="5" data-name="OTHERS"
                     @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
@@ -50,7 +50,6 @@ import { useWindowSize } from '@vueuse/core';
 import { useResizeObserver } from '@vueuse/core';
 
 const { width } = useWindowSize();
-console.log(width.value)
 
 const getImageUrl = (name) => {
     return `/${name}/medium.jpg`;

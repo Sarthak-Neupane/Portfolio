@@ -4,6 +4,18 @@ export default defineNuxtConfig({
   build: {
     transpile: ["gsap", "three"],
   },
+  extends: [
+    'nuxt-seo-kit'
+  ],
+  runtimeConfig: {
+    public: {
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://localhost:3000/',
+      siteName: 'Sarthak Neupane',
+      language: 'en-US', // prefer more explicit language codes like `en-AU` over `en`,
+      titleSeparator: '|',
+      trailingSlash: true,
+    }
+  },
   modules: [
     [
       "@unlighthouse/nuxt",
@@ -80,4 +92,10 @@ export default defineNuxtConfig({
       '6xl': 3840,
     },
   },
+  linkChecker: {
+    failOn404: true,
+  },
+  unhead: {
+    ogTitleTemplate: '%s | Sarthak Neupane',
+  }
 });

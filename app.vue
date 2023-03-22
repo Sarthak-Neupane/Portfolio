@@ -1,5 +1,6 @@
 <template>
   <div>
+    <SeoKit />
     <div class="font-['poppins'] text-dark flex flex-col justify-center items-center min-h-screen w-full ">
       <div class="h-[10vh]" ref="header">
         <div class="w-full flex justify-center items-center bg-light h-[10vh]">
@@ -34,12 +35,12 @@ import { useRoute, useRouter } from 'vue-router'
 import transitionConfig from '@/helpers/transition';
 
 useHead({
-  titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} - Sarthak Neupane` : 'Sarthak Neupane';
-  },
-  htmlAttrs: {
-    lang: 'en',
-  },
+  // titleTemplate: (titleChunk) => {
+  //   return titleChunk ? `${titleChunk} - Sarthak Neupane` : 'Sarthak Neupane';
+  // },
+  // htmlAttrs: {
+  //   lang: 'en',
+  // },
   link: [
     {
       rel: "apple-touch-icon-precomposed",
@@ -115,7 +116,7 @@ useHead({
   meta: [
     { charset: "utf-8" },
     { name: "viewport", content: "width=device-width, initial-scale=1" },
-    { name: "msapplication-TileColor", content: "#FFFFFF" },
+    { name: "msapplication-TileColor", content: "#FFFEFF" },
     { name: "msapplication-TileImage", content: "/mstile-144x144.png" },
     { name: "msapplication-square70x70logo", content: "/mstile-70x70.png" },
     {

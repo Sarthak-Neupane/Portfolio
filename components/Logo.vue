@@ -165,9 +165,9 @@ const getRouteLink = (name) => {
         case 'Work':
             return '/'
         case 'About':
-            return '/about'
+            return '/about/'
         case 'Contact':
-            return '/contact'
+            return '/contact/'
     }
 }
 
