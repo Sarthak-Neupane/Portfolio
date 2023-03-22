@@ -42,13 +42,11 @@ import { useResizeObserver } from '@vueuse/core';
 
 useSeoMeta({
    title: 'Work',
-   meta: [
-      {
-         name: 'description',
-         content: 'View the List of Frontend Projects',
-      },
-   ],
+   ogTitle: 'Works',
+   description: 'A list of personal projects made by Sarthak Neupane. I am a frontend developer who loves to build things with Vuejs and Nuxtjs.',
+   ogDescription: 'View all my frontend projects made with Vue, ThreeJs, Nuxt, Tailwind, and more.',
 })
+
 
 defineOgImageStatic({
    component: 'MyOgImage',

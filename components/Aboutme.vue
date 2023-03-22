@@ -13,8 +13,8 @@
                     <h1>Frontend</h1>
                     <h1>Developer</h1>
                 </div>
-                <h3 class="font-semibold sm:text-2xl md:text-3xl lg:text-xl 2xl:text-3xl 4xl:text-5xl 6xl:text-6xl">Nepal
-                </h3>
+                <h2 class="font-semibold sm:text-2xl md:text-3xl lg:text-xl 2xl:text-3xl 4xl:text-5xl 6xl:text-6xl">Nepal
+                </h2>
             </div>
             <ul
                 class="flex flex-grow flex-col justify-around items-start w-full gap-3 2xl:gap-7 4xl:gap-12 6xl:gap-16 font-medium">

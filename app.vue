@@ -34,13 +34,8 @@ import gsap from 'gsap';
 import { useRoute, useRouter } from 'vue-router'
 import transitionConfig from '@/helpers/transition';
 
+
 useHead({
-  // titleTemplate: (titleChunk) => {
-  //   return titleChunk ? `${titleChunk} - Sarthak Neupane` : 'Sarthak Neupane';
-  // },
-  // htmlAttrs: {
-  //   lang: 'en',
-  // },
   link: [
     {
       rel: "apple-touch-icon-precomposed",

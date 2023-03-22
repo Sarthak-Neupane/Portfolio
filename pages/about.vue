@@ -18,33 +18,9 @@ import transitionConfig from '../helpers/transition';
 
 useSeoMeta({
    title: 'About',
-   meta: [
-      {
-         name: 'description',
-         content: 'I build websites with NUXT and VUE, with added spice of gsap and Threejs',
-      },
-      // {
-      //    name: 'twitter:title',
-      //    content: 'Sarthak Neupane | About '
-      // },
-      // {
-      //    name: 'twitter:description',
-      //    content: 'I build websites with NUXT and VUE, with added spice of GSAP and THREEJS'
-      // },
-      // {
-      //    name: 'twitter:url',
-      //    content: 'https://sarthakneupane.com/about'
-      // },
-      // {
-      //    name: 'twitter:image',
-      //    content: '/og.png'
-      // },
-      // {
-      //    name: 'twitter:card',
-      //    content: 'summary_large_image'
-      // },
-   ],
-
+   ogTitle: 'About | Sarthak Neupane',
+   description: 'Looking for a frontend developer from Nepal? I specialize in building websites with NUXT and have experience with Three.js and GSAP for modern animations.',
+   ogDescription: 'I am Sarthak Neupane, a frontend developer from Nepal. I primarily work with Vuejs and Nuxtjs. I also have experience with Three.js and GSAP for modern animations.',
 })
 
 definePageMeta({

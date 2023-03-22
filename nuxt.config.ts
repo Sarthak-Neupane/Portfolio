@@ -95,7 +95,4 @@ export default defineNuxtConfig({
   linkChecker: {
     failOn404: true,
   },
-  unhead: {
-    ogTitleTemplate: '%s | Sarthak Neupane',
-  }
 });

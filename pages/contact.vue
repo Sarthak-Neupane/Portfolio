@@ -51,12 +51,9 @@ import gsap from 'gsap';
 
 useSeoMeta({
    title: 'Contact',
-   meta: [
-      {
-         name: 'description',
-         content: 'Lets Build together',
-      },
-   ],
+   ogTitle: 'Contact | Sarthak Neupane',
+   description: 'Looking for a frontend developer from Nepal? Below is my professional email address and social media links. I can assist you with VUE and NUXT. Lets Connect :)',
+   ogDescription: 'Want to work with me? Lets Connect :)',
 })
 
 defineOgImageStatic({
