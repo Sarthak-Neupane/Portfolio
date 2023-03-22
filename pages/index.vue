@@ -1,17 +1,18 @@
 <template>
-   <section class="overflow-hidden lg:overflow-hidden lg:min-h-[90vh] h-[90vh] flex flex-col justify-center items-center" ref="section">
+   <section class="overflow-hidden lg:overflow-hidden lg:min-h-[90vh] h-[90vh] flex flex-col justify-center items-center"
+      ref="section">
       <ClientOnly>
          <div v-if="getWidth" class="w-full flex justify-center items-center bg-purple">
             <Subtitle headline="Let's Build Together" Subtitle="So I can add it here :)" :nav="true" />
          </div>
       </ClientOnly>
-      <div class="flex-1 flex-col w-full flex justify-center items-center gap-5 sm:gap-14 md:gap-20 lg:gap-5">
+      <div
+         class="flex-1 flex-col w-full flex justify-center items-center gap-5 sm:gap-5 md:gap-7 lg:gap-5 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-full 4xl:max-w-[85%]">
          <div class="flex justify-center items-center w-full">
             <Header :play="playHeader" :letters="letters" :resized="resized">
             </Header>
          </div>
-         <div
-            class="flex justify-center items-center aspect-square max-w-xs sm:max-w-md md:max-w-xl lg:aspect-auto lg:max-w-full">
+         <div class="flex justify-center items-center aspect-square lg:aspect-auto lg:max-w-full">
             <Carousel :play="playCarousel" @hover="imageHover" @unHover="imageUnHover" @resume="resumeCarousel"
                @pauseCarousel="pauseCarousel" :next="next" :prev="previous">
             </Carousel>
@@ -182,9 +183,9 @@ const carouselPrevious = () => {
 
 const resized = ref(0)
 
-useResizeObserver(section, (entries)=>{
+useResizeObserver(section, (entries) => {
    resized.value++
-   if(width.value <= 1024){
+   if (width.value <= 1024) {
       letters.value = ['F', 'I', 'C', 'F', 'A', 'C', 'F', 'O', 'E', '-']
    } else {
       letters.value = ['-', '-', '-', 'W', 'O', 'R', 'K', '-', '-', '-']

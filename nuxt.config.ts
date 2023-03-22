@@ -21,13 +21,7 @@ export default defineNuxtConfig({
         mode: "mount",
       },
     ],
-    [
-      "@nuxtjs/robots",
-      {
-        UserAgent: "*",
-        Allow: "*",
-      },
-    ],
+    "@nuxtjs/robots",
     ['@storyblok/nuxt', { accessToken: 'F49GhGgaCT3zL1oikyrWKgtt' }],
     "@nuxtjs/fontaine",
     "@nuxtjs/tailwindcss",
@@ -69,5 +63,22 @@ export default defineNuxtConfig({
       // automatically imports `defineStore`
       "defineStore", // import { defineStore } from 'pinia'
     ],
+  },
+  // robots: {
+  //   configPath: "robots.txt",
+  // }
+  image: {
+    // The screen sizes predefined by `@nuxt/image`:
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      '2xl': 1536,
+      '4xl': 2160,
+      '6xl': 3840,
+    },
   },
 });

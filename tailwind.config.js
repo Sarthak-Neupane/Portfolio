@@ -9,9 +9,9 @@ module.exports = {
                 'purple': '#9E4770',
             },
             screens: {
-                '4xl': '2560px',
+                '4xl': '2160px',
                 '6xl': '3840px',
             }
         },
     },
-}
+} 

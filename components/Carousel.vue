@@ -1,39 +1,43 @@
 <template>
-    <div class="flex justify-between items-center overflow-hidden" @mouseover="pauseCarousel" @mouseout="resumeCarousel"
-        ref="container">
-        <div class="flex justify-center items-center h-full min-w-fit lg:min-w-[25%] 2xl:min-w-[35%] px-1 contentBox">
-            <NuxtLink to="/contact">
+    <div class="flex justify-between items-center overflow-hidden h-full lg:h-5/6" ref="container">
+        <div class="flex-none lg:flex-initial flex justify-center items-center h-full w-full min-w-fit px-1 contentBox">
+            <NuxtLink to="/contact" class="w-full h-full aspect-square flex justify-center items-center">
                 <nuxt-img :src="getImageUrl('ficfacfoe')" format="webp" alt="FICFACFOE" fit="cover"
-                    class="aspect-square h-full w-full lg:grayscale" ref="Image1" data-hover="1" data-name="FICFACFOE"
-                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true" />
+                    class="aspect-square lg:grayscale h-full" ref="Image1" data-hover="1" data-name="FICFACFOE"
+                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
+                    sizes="lg:300px xl:400px xxl:450px 4xl:25vw" />
             </NuxtLink>
         </div>
-        <div class="flex justify-center items-center h-full min-w-fit lg:min-w-[25%] 2xl:min-w-[35%]  px-1 contentBox">
-            <NuxtLink to="/contact">
+        <div class="flex-none lg:flex-initial flex justify-center items-center h-full w-full min-w-fit  px-1 contentBox">
+            <NuxtLink to="/contact" class="w-full h-full aspect-square flex justify-center items-center">
                 <nuxt-img :src="getImageUrl('goalgram')" format="webp" alt="GOALGRAM" fit="cover"
-                    class="aspect-square h-full w-full lg:grayscale" ref="Image2" data-hover="2" data-name="GOALGRAM"
-                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true" />
+                    class="aspect-square lg:grayscale h-full" ref="Image2" data-hover="2" data-name="GOALGRAM"
+                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
+                    sizes="lg:300px xl:400px xxl:450px 4xl:25vw" />
             </NuxtLink>
         </div>
-        <div class="flex justify-center items-center h-full min-w-fit lg:min-w-[25%] 2xl:min-w-[35%]  px-1 contentBox">
-            <NuxtLink to="/contact">
+        <div class="flex-none lg:flex-initial flex justify-center items-center h-full w-full min-w-fit px-1 contentBox">
+            <NuxtLink to="/contact" class="w-full h-full aspect-square flex justify-center items-center">
                 <nuxt-img :src="getImageUrl('rooms')" format="webp" alt="ROOMS" fit="cover"
-                    class="aspect-square h-full w-full lg:grayscale" ref="Imag3" data-hover="3" data-name="ROOMS"
-                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true" />
+                    class="aspect-square lg:grayscale h-full" ref="Imag3" data-hover="3" data-name="ROOMS"
+                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
+                    sizes="lg:300px xl:400px xxl:450px 4xl:25vw" />
             </NuxtLink>
         </div>
-        <div class="flex justify-center items-center h-full min-w-fit lg:min-w-[25%] 2xl:min-w-[35%]  px-1 contentBox">
-            <NuxtLink to="/contact">
+        <div class="flex-none lg:flex-initial flex justify-center items-center h-full w-full min-w-fit   px-1 contentBox">
+            <NuxtLink to="/contact" class="w-full h-full aspect-square flex justify-center items-center">
                 <nuxt-img :src="getImageUrl('chillflix')" format="webp" alt="CHILLFLIX" fit="cover"
-                    class="aspect-square h-full w-full lg:grayscale" ref="Imag4" data-hover="4" data-name="CHILLFLIX"
-                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true" />
+                    class="aspect-square lg:grayscale h-full" ref="Imag4" data-hover="4" data-name="CHILLFLIX"
+                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
+                    sizes="lg:300px xl:400px xxl:450px 4xl:25vw" />
             </NuxtLink>
         </div>
-        <div class="flex justify-center items-center h-full min-w-fit lg:min-w-[25%] 2xl:min-w-[35%]  px-1 contentBox">
-            <NuxtLink to="/contact">
+        <div class="flex-none lg:flex-initial flex justify-center items-center h-full w-full min-w-fit   px-1 contentBox">
+            <NuxtLink to="/contact" class="w-full h-full aspect-square flex justify-center items-center">
                 <nuxt-img :src="getImageUrl('others')" format="webp" fit="cover" alt="OTHERS"
-                    class="aspect-square h-full w-full lg:grayscale" ref="Image5" data-hover="5" data-name="OTHERS"
-                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true" />
+                    class="aspect-square lg:grayscale h-full" ref="Image5" data-hover="5" data-name="OTHERS"
+                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
+                    sizes="lg:300px xl:400px xxl:450px 4xl:25vw" />
             </NuxtLink>
         </div>
     </div>
@@ -75,6 +79,7 @@ const boxes = ref(null);
 
 const hoverImage = (e) => {
     if (width.value > 1024) {
+        pauseCarousel()
         hovered.value = true;
         const { hover, name } = e.target.dataset;
         gsap.to(e.target, { filter: 'grayscale(0)', duration: 0.5, ease: 'power2.inOut' })
@@ -84,6 +89,7 @@ const hoverImage = (e) => {
 
 const unHoverImage = (e) => {
     if (width.value > 1024) {
+        resumeCarousel()
         hovered.value = false;
         gsap.to(e.target, { filter: 'grayscale(1)', duration: 0.5, ease: 'power2.inOut' })
         emits('unHover')
