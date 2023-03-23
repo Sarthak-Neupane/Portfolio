@@ -29,12 +29,12 @@ definePageMeta({
    pageTransition: transitionConfig,
 })
 
-// defineOgImageStatic({
-//    component: 'MyOgImage',
-//    title: 'About | Sarthak Neupane',
-//    content: 'Frontend Developer - Vuejs | Nuxtjs',
-//    backgroundColor: 'bg-[#FFBE0B]',
-// })
+defineOgImageStatic({
+   component: 'MyOgImage',
+   title: 'About | Sarthak Neupane',
+   content: 'Frontend Developer - Vuejs | Nuxtjs',
+   backgroundColor: 'bg-[#FFBE0B]',
+})
 
 const transition = useTransitionComposable()
 const play = ref(false)
