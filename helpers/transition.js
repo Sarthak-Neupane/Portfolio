@@ -10,7 +10,7 @@ const pageTransition = {
   mode: 'out-in',
   onEnter: (el, header, done) => {
     const getExactElement = header.querySelector('#animate')
-    const pageName = getExactElement.querySelector('#pageName')
+    const pageName = getExactElement.querySelector('[data-id="pageName"]')
     gsap.set(el, { autoAlpha: 0 })
     gsap
       .timeline({

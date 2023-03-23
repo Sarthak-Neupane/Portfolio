@@ -138,7 +138,7 @@ const transition = useTransitionComposable()
 onMounted(() => {
   ctx.value = gsap.context((self) => {
     const headerElem = self.selector('#animate')
-    const pageName = self.selector('#pageName')
+    const pageName = self.selector('[data-id="pageName"]')
     gsap.set(headerElem, { height: '100vh' })
     gsap.timeline({
       paused: true, delay: 1, onComplete: () => {
