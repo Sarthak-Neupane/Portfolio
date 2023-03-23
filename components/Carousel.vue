@@ -2,42 +2,45 @@
     <div class="flex justify-between items-center overflow-hidden h-full w-full" ref="container">
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit px-1 contentBox">
             <NuxtLink to="/contact/" class="w-full h-full aspect-square flex justify-center items-center">
-                <nuxt-img :src="getImageUrl('ficfacfoe')" format="webp" alt="FICFACFOE" fit="cover"
-                    class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Image1" data-hover="1" data-name="FICFACFOE"
-                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
+                <nuxt-img provider="storyblok" :src="getImageUrl('ficfacfoe')" alt="FICFACFOE" fit="in"
+                    :modifiers="{ filters: { fill: 'transparent' } }"
+                    class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Image1" data-hover="1"
+                    data-name="FICFACFOE" @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
                     sizes="xl:25vw 2xl:25vw 4xl:25vw" />
             </NuxtLink>
         </div>
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit  px-1 contentBox">
             <NuxtLink to="/contact/" class="w-full h-full aspect-square flex justify-center items-center">
-                <nuxt-img :src="getImageUrl('goalgram')" format="webp" alt="GOALGRAM" fit="cover"
-                    class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Image2" data-hover="2" data-name="GOALGRAM"
-                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
+                <nuxt-img provider="storyblok" :src="getImageUrl('goalgram')" alt="GOALGRAM" fit="in"
+                    :modifiers="{ filters: { fill: 'transparent' } }"
+                    class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Image2" data-hover="2"
+                    data-name="GOALGRAM" @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
                     sizes="xl:25vw 2xl:25vw 4xl:25vw" />
             </NuxtLink>
         </div>
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit px-1 contentBox">
             <NuxtLink to="/contact/" class="w-full h-full aspect-square flex justify-center items-center">
-                <nuxt-img :src="getImageUrl('rooms')" format="webp" alt="ROOMS" fit="cover"
+                <nuxt-img provider="storyblok" :src="getImageUrl('rooms')" alt="ROOMS" fit="in"
+                    :modifiers="{ filters: { fill: 'transparent' } }"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Imag3" data-hover="3" data-name="ROOMS"
-                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
+                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true" sizes="xl:25vw 2xl:25vw 4xl:25vw" />
+            </NuxtLink>
+        </div>
+        <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit   px-1 contentBox">
+            <NuxtLink to="/contact/" class="w-full h-full aspect-square flex justify-center items-center">
+                <nuxt-img provider="storyblok" :src="getImageUrl('chillflix')" alt="CHILLFLIX" fit="in"
+                    :modifiers="{ filters: { fill: 'transparent' } }"
+                    class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Imag4" data-hover="4"
+                    data-name="CHILLFLIX" @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
                     sizes="xl:25vw 2xl:25vw 4xl:25vw" />
             </NuxtLink>
         </div>
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit   px-1 contentBox">
             <NuxtLink to="/contact/" class="w-full h-full aspect-square flex justify-center items-center">
-                <nuxt-img :src="getImageUrl('chillflix')" format="webp" alt="CHILLFLIX" fit="cover"
-                    class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Imag4" data-hover="4" data-name="CHILLFLIX"
-                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
-                    sizes="xl:25vw 2xl:25vw 4xl:25vw" />
-            </NuxtLink>
-        </div>
-        <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit   px-1 contentBox">
-            <NuxtLink to="/contact/" class="w-full h-full aspect-square flex justify-center items-center">
-                <nuxt-img :src="getImageUrl('others')" format="webp" fit="cover" alt="OTHERS"
+                <nuxt-img provider="storyblok" :src="getImageUrl('others')" fit="in"
+                    :modifiers="{ filters: { fill: 'transparent' } }" alt="OTHERS"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Image5" data-hover="5" data-name="OTHERS"
-                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
-                    sizes="xl:25vw 2xl:25vw 4xl:25vw" />
+                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true" sizes="xl:25vw 2xl:25vw 4xl:25vw" />
             </NuxtLink>
         </div>
     </div>
@@ -52,7 +55,19 @@ import { useResizeObserver } from '@vueuse/core';
 const { width } = useWindowSize();
 
 const getImageUrl = (name) => {
-    return `/${name}/medium.jpg`;
+    switch (name) {
+        case 'ficfacfoe':
+            return 'https://a.storyblok.com/f/209045/1200x1200/efeded8a8b/ficfacfoe.jpg'
+        case 'goalgram':
+            return 'https://a.storyblok.com/f/209045/1200x1200/ba9637812a/goalgram.jpg'
+        case 'rooms':
+            return 'https://a.storyblok.com/f/209045/1200x1200/ca79517d3c/rooms.jpg'
+        case 'chillflix':
+            return 'https://a.storyblok.com/f/209045/1200x1200/29c9a713bf/chillflix.jpg'
+        case 'others':
+            return 'https://a.storyblok.com/f/209045/1200x1200/e261a24b47/others.jpg'
+    }
+
 }
 
 

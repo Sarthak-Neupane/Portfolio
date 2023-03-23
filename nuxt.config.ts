@@ -4,18 +4,15 @@ export default defineNuxtConfig({
   build: {
     transpile: ["gsap", "three"],
   },
-  
-  extends: [
-    'nuxt-seo-kit'
-  ],
+  extends: ["nuxt-seo-kit"],
   runtimeConfig: {
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
-      siteName: 'Sarthak Neupane',
-      language: 'en-US', // prefer more explicit language codes like `en-AU` over `en`,
-      titleSeparator: '|',
+      siteName: "Sarthak Neupane",
+      language: "en-US", // prefer more explicit language codes like `en-AU` over `en`,
+      titleSeparator: "|",
       trailingSlash: true,
-    }
+    },
   },
   modules: [
     [
@@ -34,19 +31,22 @@ export default defineNuxtConfig({
         mode: "mount",
       },
     ],
-    ['@storyblok/nuxt', { accessToken: 'F49GhGgaCT3zL1oikyrWKgtt' }],
-    ["@nuxtjs/fontaine", {
-      fonts: [
-        {
-          family: "Inter",
-          variants: ["400", "500", "600", "700"],
-        },
-        {
-          family: "Poppins",
-          variants: ["400", "500", "600", "700"],
-        },
-      ],
-    }],
+    ["@storyblok/nuxt", { accessToken: process.env.NUXT_STORYBLOK_TOKEN }],
+    [
+      "@nuxtjs/fontaine",
+      {
+        fonts: [
+          {
+            family: "Inter",
+            variants: ["400", "500", "600", "700"],
+          },
+          {
+            family: "Poppins",
+            variants: ["400", "500", "600", "700"],
+          },
+        ],
+      },
+    ],
     "@nuxtjs/tailwindcss",
     [
       "@nuxtjs/google-fonts",
@@ -96,19 +96,24 @@ export default defineNuxtConfig({
       lg: 1024,
       xl: 1280,
       xxl: 1536,
-      '4xl': 2160,
-      '6xl': 3840,
+      "4xl": 2160,
+      "6xl": 3840,
     },
-    // provider: 'vercel'
-    provider: process.env.NUXT_ENV_VERCEL_ENV ? 'vercel' : 'ipx'
+    storyblok: {
+      baseURL: 'https://a.storyblok.com'
+    }
   },
   linkChecker: {
     failOn404: false,
   },
   devServer: {
     https: {
-      key: 'localhost-key.pem',
-      cert: 'localhost.pem'
-    }
+      key: "localhost-key.pem",
+      cert: "localhost.pem",
+    },
+  },
+  nitro: {
+    // serveStatic: true,
+    // preset: "vercel-static",
   },
 });
