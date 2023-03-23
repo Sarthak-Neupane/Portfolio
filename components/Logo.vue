@@ -132,9 +132,26 @@ const getRouteSecond = computed(() => {
     }
 })
 
+console.log(route.path, route.params, route.query, route.hash, route.fullPath, route.matched, route.redirectedFrom, route.meta)
+
+const validateRoute = (v)=>{
+    if(v === 'Work'){
+        return true
+    }else if(v === 'About'){
+        return true
+    }else if(v === 'Contact'){
+        return true
+    }
+}
+
 const getTheRoute = (position) => {
     const routes = ['Work', 'About', 'Contact']
-    const thisRouteIndex = routes.indexOf(route.name)
+    let thisRouteIndex;
+    if(validateRoute(route.name)){
+        thisRouteIndex = routes.indexOf(route.name)
+    } else {
+        thisRouteIndex = 0
+    }
     let nextRoute, previousRoute;
     if (thisRouteIndex === 0) {
         nextRoute = routes[thisRouteIndex + 1]

@@ -1,7 +1,7 @@
 <template>
     <div class="flex justify-between items-center overflow-hidden h-full w-full" ref="container">
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit px-1 contentBox">
-            <NuxtLink to="/contact/" class="w-full h-full aspect-square flex justify-center items-center">
+            <NuxtLink to="/work/ficfacfoe/" class="w-full h-full aspect-square flex justify-center items-center">
                 <nuxt-img provider="storyblok" :src="getImageUrl('ficfacfoe')" alt="FICFACFOE" fit="in"
                     :modifiers="{ filters: { fill: 'transparent' } }"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Image1" data-hover="1"
@@ -10,7 +10,7 @@
             </NuxtLink>
         </div>
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit  px-1 contentBox">
-            <NuxtLink to="/contact/" class="w-full h-full aspect-square flex justify-center items-center">
+            <NuxtLink to="/work/ficfacfoe/" class="w-full h-full aspect-square flex justify-center items-center">
                 <nuxt-img provider="storyblok" :src="getImageUrl('goalgram')" alt="GOALGRAM" fit="in"
                     :modifiers="{ filters: { fill: 'transparent' } }"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Image2" data-hover="2"
@@ -19,7 +19,7 @@
             </NuxtLink>
         </div>
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit px-1 contentBox">
-            <NuxtLink to="/contact/" class="w-full h-full aspect-square flex justify-center items-center">
+            <NuxtLink to="/work/ficfacfoe/" class="w-full h-full aspect-square flex justify-center items-center">
                 <nuxt-img provider="storyblok" :src="getImageUrl('rooms')" alt="ROOMS" fit="in"
                     :modifiers="{ filters: { fill: 'transparent' } }"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Imag3" data-hover="3" data-name="ROOMS"
@@ -27,7 +27,7 @@
             </NuxtLink>
         </div>
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit   px-1 contentBox">
-            <NuxtLink to="/contact/" class="w-full h-full aspect-square flex justify-center items-center">
+            <NuxtLink to="/work/ficfacfoe/" class="w-full h-full aspect-square flex justify-center items-center">
                 <nuxt-img provider="storyblok" :src="getImageUrl('chillflix')" alt="CHILLFLIX" fit="in"
                     :modifiers="{ filters: { fill: 'transparent' } }"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Imag4" data-hover="4"
@@ -36,7 +36,7 @@
             </NuxtLink>
         </div>
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit   px-1 contentBox">
-            <NuxtLink to="/contact/" class="w-full h-full aspect-square flex justify-center items-center">
+            <NuxtLink to="/work/ficfacfoe/" class="w-full h-full aspect-square flex justify-center items-center">
                 <nuxt-img provider="storyblok" :src="getImageUrl('others')" fit="in"
                     :modifiers="{ filters: { fill: 'transparent' } }" alt="OTHERS"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Image5" data-hover="5" data-name="OTHERS"
