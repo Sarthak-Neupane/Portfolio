@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   build: {
     transpile: ["gsap", "three"],
   },
+  
   extends: [
     'nuxt-seo-kit'
   ],

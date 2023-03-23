@@ -9,25 +9,24 @@
     "analyze": "nuxt build --analyze"
   },
   "devDependencies": {
-    "@nuxt/image": "^0.7.1",
     "@nuxtjs/fontaine": "^0.2.4",
-    "@nuxtjs/google-fonts": "^3.0.0-1",
-    "@nuxtjs/tailwindcss": "^6.4.1",
+    "@nuxtjs/google-fonts": "^3.0.0",
+    "@nuxtjs/tailwindcss": "^6.6.4",
     "@unlighthouse/nuxt": "^0.4.9",
     "autoprefixer": "^10.4.14",
-    "nuxt": "^3.2.3",
+    "nuxt": "^3.3.1",
     "nuxt-delay-hydration": "^1.1.4",
     "nuxt-icon": "^0.3.3",
     "nuxt-seo-kit": "^1.3.5",
     "vite-plugin-glsl": "^1.1.2"
   },
   "dependencies": {
-    "@nuxt/image-edge": "^1.0.0-27968280.9739e4d",
+    "@nuxt/image-edge": "^1.0.0-27991759.1a5eea1",
     "@nuxtjs/robots": "^3.0.0",
     "@pinia/nuxt": "^0.4.7",
     "@storyblok/nuxt": "^5.3.0",
     "@vueuse/core": "^9.13.0",
-    "gsap": "^3.11.4",
+    "gsap": "^3.11.5",
     "pinia": "^2.0.33",
     "three": "^0.150.1"
   },
