@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   ],
   runtimeConfig: {
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://localhost:3000/',
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
       siteName: 'Sarthak Neupane',
       language: 'en-US', // prefer more explicit language codes like `en-AU` over `en`,
       titleSeparator: '|',
@@ -33,9 +33,19 @@ export default defineNuxtConfig({
         mode: "mount",
       },
     ],
-    "@nuxtjs/robots",
     ['@storyblok/nuxt', { accessToken: 'F49GhGgaCT3zL1oikyrWKgtt' }],
-    "@nuxtjs/fontaine",
+    ["@nuxtjs/fontaine", {
+      fonts: [
+        {
+          family: "Inter",
+          variants: ["400", "500", "600", "700"],
+        },
+        {
+          family: "Poppins",
+          variants: ["400", "500", "600", "700"],
+        },
+      ],
+    }],
     "@nuxtjs/tailwindcss",
     [
       "@nuxtjs/google-fonts",
@@ -48,7 +58,7 @@ export default defineNuxtConfig({
         download: true,
         base64: false,
         prefetch: false,
-        preconnect: false,
+        preconnect: true,
         preload: false,
       },
     ],
@@ -76,9 +86,6 @@ export default defineNuxtConfig({
       "defineStore", // import { defineStore } from 'pinia'
     ],
   },
-  // robots: {
-  //   configPath: "robots.txt",
-  // }
   image: {
     // The screen sizes predefined by `@nuxt/image`:
     screens: {
@@ -94,5 +101,11 @@ export default defineNuxtConfig({
   },
   linkChecker: {
     failOn404: true,
+  },
+  devServer: {
+    https: {
+      key: 'localhost-key.pem',
+      cert: 'localhost.pem'
+    }
   },
 });

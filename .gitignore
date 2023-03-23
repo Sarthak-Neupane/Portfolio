@@ -10,4 +10,6 @@ dist
 .unlighthouse
 localhost.pem
 localhost-key.pem
+server.crt
+server.key
 ```
