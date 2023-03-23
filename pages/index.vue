@@ -48,12 +48,12 @@ useSeoMeta({
 })
 
 
-defineOgImageStatic({
-   component: 'MyOgImage',
-   title: 'Work | Sarthak Neupane',
-   content: 'Frontend Developer - Vuejs | Nuxtjs',
-   backgroundColor: 'bg-[#9E4770]',
-})
+// defineOgImageStatic({
+//    component: 'MyOgImage',
+//    title: 'Work | Sarthak Neupane',
+//    content: 'Frontend Developer - Vuejs | Nuxtjs',
+//    backgroundColor: 'bg-[#9E4770]',
+// })
 
 definePageMeta({
    name: 'Work',

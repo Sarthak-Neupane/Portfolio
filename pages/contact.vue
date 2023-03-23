@@ -56,12 +56,12 @@ useSeoMeta({
    ogDescription: 'Want to work with me? Lets Connect :)',
 })
 
-defineOgImageStatic({
-   component: 'MyOgImage',
-   title: 'Contact | Sarthak Neupane',
-   content: 'Frontend Developer - Vuejs | Nuxtjs',
-   backgroundColor: 'bg-[#7AC74F]',
-})
+// defineOgImageStatic({
+//    component: 'MyOgImage',
+//    title: 'Contact | Sarthak Neupane',
+//    content: 'Frontend Developer - Vuejs | Nuxtjs',
+//    backgroundColor: 'bg-[#7AC74F]',
+// })
 
 definePageMeta({
    title: 'Contact',
