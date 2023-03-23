@@ -98,6 +98,7 @@ export default defineNuxtConfig({
       '4xl': 2160,
       '6xl': 3840,
     },
+    // provider: process.env.VERCEL_ENV ? 'vercel' : 'ipx',
   },
   linkChecker: {
     failOn404: true,
