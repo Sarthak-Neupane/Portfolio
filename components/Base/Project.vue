@@ -1,12 +1,17 @@
 <template>
-    <section class="flex justify-center items-center flex-col gap-24">
-        <div class="h-[90vh] max-h-[90vh] w-full" v-if="width >= 1280">
-            <img src="/chillflix/large.jpg" class="h-full w-full object-cover" alt="">
-        </div>
+    <section class="flex justify-center items-center flex-col gap-5">
+        <ClientOnly>
+            <template #fallback>
+                image                
+            </template>
+            <div class="h-[90vh] max-h-[90vh] w-full" v-if="width >= 1280">
+                <img src="/chillflix/large.jpg" class="h-full w-full object-cover" alt="">
+            </div>
+        </ClientOnly>
         <div class="container mx-auto px-2 flex flex-col justify-start items-start gap-7">
             <div>
                 <NuxtLink to="/">
-                    <button class="text-purple font-bold text-xs">
+                    <button class="text-purple font-bold text-xs sm:text-sm">
                         <Icon name="uil:arrow-left" />
                         Work
                     </button>
@@ -14,13 +19,13 @@
             </div>
             <div class="flex flex-col justify-center items-start gap-5">
                 <div>
-                    <h1 class="text-4xl font-black">
+                    <h1 class="text-4xl sm:text-5xl font-black">
                         <slot name="title"></slot>
                     </h1>
-                    <h2 class="text-xs my-2 font-medium">
+                    <h2 class="text-xs sm:text-base my-2 font-medium">
                         <slot name="subtitle"></slot>
                     </h2>
-                    <ul class="flex justify-start items-center gap-5 text-xs">
+                    <ul class="flex justify-start items-center gap-5 text-xs sm:text-sm">
                         <li class="flex justify-center items-center gap-4"><a
                                 class="underline underline-offset-2 text-blue-600"
                                 href="https://ficfacfoe.onrender.com">Visit </a>
@@ -35,7 +40,7 @@
                 </div>
                 <div>
                     <ProjectsTitle>Stack :</ProjectsTitle>
-                    <ul class="flex text-xs justify-start items-center gap-4 flex-wrap">
+                    <ul class="flex text-xs sm:text-base justify-start items-center gap-4 flex-wrap">
                         <li>
                             <slot name="stack1"></slot>
                         </li>
@@ -63,7 +68,7 @@
                         <slot name="para1">
                         </slot>
                     </ProjectsParagraph>
-                    <ProjectsImage src="/chillflix/large.jpg" class="my-5" alt="Image One" />
+                    <ProjectsImage :src="images[0].src" class="my-5" alt="Image One" />
                     <ProjectsParagraph>
                         <slot name="para2">
                         </slot>
@@ -72,7 +77,7 @@
                     <ProjectsParagraph>
                         <slot name="para3"></slot>
                     </ProjectsParagraph>
-                    <ProjectsImage src="/chillflix/large.jpg" class="my-5" alt="Image One" />
+                    <ProjectsImage :src="images[1].src" class="my-5" alt="Image One" />
                     <ProjectsParagraph>
                         <slot name="para4"></slot>
                     </ProjectsParagraph>
@@ -103,5 +108,12 @@
 import { useWindowSize } from '@vueuse/core';
 
 const { width } = useWindowSize();
+
+defineProps({
+    images: {
+        type: Array,
+        required: true
+    }
+})
 
 </script>
