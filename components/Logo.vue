@@ -132,8 +132,6 @@ const getRouteSecond = computed(() => {
     }
 })
 
-console.log(route.path, route.params, route.query, route.hash, route.fullPath, route.matched, route.redirectedFrom, route.meta)
-
 const validateRoute = (v)=>{
     if(v === 'Work'){
         return true
