@@ -18,7 +18,7 @@
                     </button>
                 </NuxtLink>
             </div>
-            <div class="flex flex-col justify-center items-start gap-5">
+            <div class="flex flex-col justify-center items-start gap-5 w-full">
                 <div>
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl 4xl:text-7xl font-black">
                         <slot name="title"></slot>
@@ -70,7 +70,7 @@
                         <slot name="para1">
                         </slot>
                     </ProjectsParagraph>
-                    <ProjectsImage :src="images[0].src" class="my-5" alt="Image One" />
+                    <ProjectsImage :src="images[0]?.src" class="my-5" alt="Image One" />
                     <ProjectsParagraph>
                         <slot name="para2">
                         </slot>
@@ -79,7 +79,7 @@
                     <ProjectsParagraph>
                         <slot name="para3"></slot>
                     </ProjectsParagraph>
-                    <ProjectsImage :src="images[1].src" class="my-5" alt="Image One" />
+                    <ProjectsImage :src="images[1]?.src" class="my-5" alt="Image One" />
                     <ProjectsParagraph>
                         <slot name="para4"></slot>
                     </ProjectsParagraph>
