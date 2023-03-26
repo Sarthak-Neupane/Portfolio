@@ -63,6 +63,10 @@
                         <slot name="overview">
                         </slot>
                     </ProjectsParagraph>
+                    <ProjectsParagraph>
+                        <slot name="overview-second">
+                        </slot>
+                    </ProjectsParagraph>
                 </div>
                 <div>
                     <ProjectsTitle>Development Process</ProjectsTitle>
