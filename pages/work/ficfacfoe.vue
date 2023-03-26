@@ -120,4 +120,20 @@ const images = [
     }
 }
 
+@media screen and (min-width: 1536px) {
+    .third {
+        font-size: medium;
+    }
+}
+@media screen and (min-width: 2160px) {
+    .third {
+        font-size: large;
+    }
+}
+@media screen and (min-width: 3840px) {
+    .third {
+        font-size: 1.25rem;
+    }
+}
+
 </style>

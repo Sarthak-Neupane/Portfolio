@@ -5,13 +5,13 @@
                 image                
             </template>
             <div class="h-[90vh] max-h-[90vh] w-full" v-if="width >= 1280">
-                <img src="/chillflix/large.jpg" class="h-full w-full object-cover" alt="">
+                <img src="/ficfacfoe/large.jpg" class="h-full w-full object-cover" alt="">
             </div>
         </ClientOnly>
-        <div class="xl:max-w-screen-lg 2xl:max-w-screen-xl 4xl:max-w-screen-2xl mx-auto px-2 lg:px-5 flex flex-col justify-start items-start gap-7">
+        <div class="xl:max-w-screen-lg 2xl:max-w-screen-xl 4xl:max-w-screen-2xl 6xl:max-w-screen-4xl mx-auto px-2 lg:px-5 flex flex-col justify-start items-start gap-7">
             <div>
                 <NuxtLink to="/">
-                    <button class="text-purple font-bold text-xs sm:text-sm lg:text-base">
+                    <button class="text-purple font-bold text-xs sm:text-sm lg:text-base 2xl:text-lg 4xl:text-xl">
                         <Icon name="uil:arrow-left" />
                         Work
                     </button>
@@ -19,13 +19,13 @@
             </div>
             <div class="flex flex-col justify-center items-start gap-5">
                 <div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl 4xl:text-7xl font-black">
                         <slot name="title"></slot>
                     </h1>
-                    <h2 class="text-xs sm:text-base my-2 lg:my-5 font-medium">
+                    <h2 class="text-xs sm:text-base xl:text-lg 4xl:text-xl 6xl:text-2xl my-2 lg:my-5 font-medium">
                         <slot name="subtitle"></slot>
                     </h2>
-                    <ul class="flex justify-start items-center gap-5 text-xs sm:text-sm lg:text-base">
+                    <ul class="flex justify-start items-center gap-5 text-xs sm:text-sm lg:text-base 2xl:text-lg 4xl:text-xl">
                         <li class="flex justify-center items-center gap-4"><a
                                 class="underline underline-offset-2 text-blue-600"
                                 href="https://ficfacfoe.onrender.com">Visit </a>
