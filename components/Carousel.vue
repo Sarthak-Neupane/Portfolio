@@ -5,16 +5,16 @@
                 <nuxt-img provider="storyblok" :src="getImageUrl('ficfacfoe')" alt="FICFACFOE" fit="in"
                     :modifiers="{ filters: { fill: 'transparent' } }"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Image1" data-hover="1"
-                    data-name="FICFACFOE" @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
+                    data-name="FICFACFOE" @mouseenter="hoverImage" @mouseout="unHoverImage"
                     sizes="xl:25vw 2xl:25vw 4xl:25vw" />
             </NuxtLink>
         </div>
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit  px-1 contentBox">
             <NuxtLink to="/work/portfolio/" class="w-full h-full aspect-square flex justify-center items-center">
-                <nuxt-img provider="storyblok" :src="getImageUrl('goalgram')" alt="PORTFOLIO" fit="in"
+                <nuxt-img provider="storyblok" :src="getImageUrl('portfolio')" alt="PORTFOLIO" fit="in"
                     :modifiers="{ filters: { fill: 'transparent' } }"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Image2" data-hover="2"
-                    data-name="PORTFOLIO" @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
+                    data-name="PORTFOLIO" @mouseenter="hoverImage" @mouseout="unHoverImage"
                     sizes="xl:25vw 2xl:25vw 4xl:25vw" />
             </NuxtLink>
         </div>
@@ -23,7 +23,7 @@
                 <nuxt-img provider="storyblok" :src="getImageUrl('rooms')" alt="ROOMS" fit="in"
                     :modifiers="{ filters: { fill: 'transparent' } }"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Imag3" data-hover="3" data-name="ROOMS"
-                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true" sizes="xl:25vw 2xl:25vw 4xl:25vw" />
+                    @mouseenter="hoverImage" @mouseout="unHoverImage" sizes="xl:25vw 2xl:25vw 4xl:25vw" />
             </NuxtLink>
         </div>
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit   px-1 contentBox">
@@ -31,7 +31,7 @@
                 <nuxt-img provider="storyblok" :src="getImageUrl('chillflix')" alt="CHILLFLIX" fit="in"
                     :modifiers="{ filters: { fill: 'transparent' } }"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Imag4" data-hover="4"
-                    data-name="CHILLFLIX" @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
+                    data-name="CHILLFLIX" @mouseenter="hoverImage" @mouseout="unHoverImage"
                     sizes="xl:25vw 2xl:25vw 4xl:25vw" />
             </NuxtLink>
         </div>
@@ -40,7 +40,7 @@
                 <nuxt-img provider="storyblok" :src="getImageUrl('others')" fit="in"
                     :modifiers="{ filters: { fill: 'transparent' } }" alt="OTHERS"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Image5" data-hover="5" data-name="OTHERS"
-                    @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true" sizes="xl:25vw 2xl:25vw 4xl:25vw" />
+                    @mouseenter="hoverImage" @mouseout="unHoverImage" sizes="xl:25vw 2xl:25vw 4xl:25vw" />
             </NuxtLink>
         </div>
     </div>
@@ -58,8 +58,8 @@ const getImageUrl = (name) => {
     switch (name) {
         case 'ficfacfoe':
             return 'https://a.storyblok.com/f/209045/1200x1200/efeded8a8b/ficfacfoe.jpg'
-        case 'goalgram':
-            return 'https://a.storyblok.com/f/209045/1200x1200/ba9637812a/goalgram.jpg'
+        case 'portfolio':
+            return 'https://a.storyblok.com/f/209045/1200x1200/9e77745f5d/portfolio.jpg'
         case 'rooms':
             return 'https://a.storyblok.com/f/209045/1200x1200/ca79517d3c/rooms.jpg'
         case 'chillflix':

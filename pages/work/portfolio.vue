@@ -1,6 +1,6 @@
 <template>
     <BaseProject :images="images" :links="links" :largeImage="largeImage">
-        <template #title>Portfolio</template>
+        <template #title>Secondary Portfolio</template>
         <template #subtitle>My Previous Portfolio</template>
         <template #stack1>JAVASCRIPT</template>
         <template #stack2>THREE-JS</template>
@@ -23,8 +23,8 @@ definePageMeta({
 const images = []
 
 const largeImage = {
-    src: '/goalgram/large.jpg',
-    alt: 'goalgram',
+    src: '/portfolio/large.jpg',
+    alt: 'portfolio',
 }
 
 const links = {
