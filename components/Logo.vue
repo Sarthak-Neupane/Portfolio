@@ -24,8 +24,8 @@
             <div class="px-3 relative flex flex-col justify-center items-stretch overflow-y-hidden">
                 <div class=" flex flex-col justify-center items-center text-xs sm:text-base md:text-lg lg:text-sm 2xl:text-base 4xl:text-xl 6xl:text-2xl"
                     data-id="pageName">
-                    <span class="text-center font-medium overflow-hidden" :class="getColor(getRouteFirst)"> {{ getRouteFirst }} </span>
-                    <span class=" flex justify-center items-center font-medium absolute top-full left-0 w-full h-full overflow-hidden"
+                    <span class="text-center font-medium" :class="getColor(getRouteFirst)"> {{ getRouteFirst }} </span>
+                    <span class=" flex justify-center items-center font-medium absolute top-full left-0 w-full h-full"
                         :class="getColor(getRouteSecond)">
                         {{ getRouteSecond }} </span>
                 </div>

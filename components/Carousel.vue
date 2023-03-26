@@ -10,16 +10,16 @@
             </NuxtLink>
         </div>
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit  px-1 contentBox">
-            <NuxtLink to="/work/ficfacfoe/" class="w-full h-full aspect-square flex justify-center items-center">
-                <nuxt-img provider="storyblok" :src="getImageUrl('goalgram')" alt="GOALGRAM" fit="in"
+            <NuxtLink to="/work/portfolio/" class="w-full h-full aspect-square flex justify-center items-center">
+                <nuxt-img provider="storyblok" :src="getImageUrl('goalgram')" alt="PORTFOLIO" fit="in"
                     :modifiers="{ filters: { fill: 'transparent' } }"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Image2" data-hover="2"
-                    data-name="GOALGRAM" @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
+                    data-name="PORTFOLIO" @mouseenter="hoverImage" @mouseout="unHoverImage" :preload="true"
                     sizes="xl:25vw 2xl:25vw 4xl:25vw" />
             </NuxtLink>
         </div>
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit px-1 contentBox">
-            <NuxtLink to="/work/ficfacfoe/" class="w-full h-full aspect-square flex justify-center items-center">
+            <NuxtLink to="/work/rooms/" class="w-full h-full aspect-square flex justify-center items-center">
                 <nuxt-img provider="storyblok" :src="getImageUrl('rooms')" alt="ROOMS" fit="in"
                     :modifiers="{ filters: { fill: 'transparent' } }"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Imag3" data-hover="3" data-name="ROOMS"
@@ -27,7 +27,7 @@
             </NuxtLink>
         </div>
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit   px-1 contentBox">
-            <NuxtLink to="/work/ficfacfoe/" class="w-full h-full aspect-square flex justify-center items-center">
+            <NuxtLink to="/work/chillflix/" class="w-full h-full aspect-square flex justify-center items-center">
                 <nuxt-img provider="storyblok" :src="getImageUrl('chillflix')" alt="CHILLFLIX" fit="in"
                     :modifiers="{ filters: { fill: 'transparent' } }"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Imag4" data-hover="4"
@@ -67,7 +67,6 @@ const getImageUrl = (name) => {
         case 'others':
             return 'https://a.storyblok.com/f/209045/1200x1200/e261a24b47/others.jpg'
     }
-
 }
 
 
