@@ -5,7 +5,7 @@
                 image
             </template>
             <div class="h-[90vh] max-h-[90vh] w-full" v-if="width >= 1280">
-                <img src="/ficfacfoe/large.jpg" class="h-full w-full object-cover" alt="">
+                <img :src="largeImage.src" class="h-full w-full object-cover" :alt="largeImage.alt">
             </div>
         </ClientOnly>
         <div
@@ -30,12 +30,12 @@
                         class="flex justify-start items-center gap-5 text-xs sm:text-sm lg:text-base 2xl:text-lg 4xl:text-xl">
                         <li class="flex justify-center items-center gap-4"><a
                                 class="underline underline-offset-2 text-blue-600"
-                                href="https://ficfacfoe.onrender.com">Visit </a>
+                                :href="links.live" target="_blank" >Visit </a>
                             <Icon name="uil:globe" />
                         </li>
                         <li class="flex justify-center items-center gap-4"><a
                                 class="underline underline-offset-2 text-blue-600"
-                                href="https://github.com/Sarthak-Neupane/Footys">Github</a>
+                                :href="links.github" target="_blank" >Github</a>
                             <Icon name="uil:github" />
                         </li>
                     </ul>
@@ -142,6 +142,14 @@ const { top } = useElementBounding(scrollToElement)
 defineProps({
     images: {
         type: Array,
+        required: true
+    },
+    links: {
+        type: Object,
+        required: true
+    },
+    largeImage: {
+        type: Object,
         required: true
     }
 })

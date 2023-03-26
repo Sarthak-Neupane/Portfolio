@@ -1,5 +1,5 @@
 <template>
-    <BaseProject :images="images">
+    <BaseProject :images="images" :links="links" :largeImage="largeImage">
         <template #title>FICFACFOE</template>
         <template #subtitle>A multiplayer Football-Transfers based game</template>
         <template #stack1>VUE/NUXT</template>
@@ -99,6 +99,17 @@ const images = [
         alt: 'others',
     },
 ]
+
+const largeImage = {
+    src: '/ficfacfoe/large.jpg',
+    alt: 'ficfacfoe',
+}
+
+const links = {
+    github: 'https://github.com/Sarthak-Neupane/Footys',
+    live: 'https://ficfacfoe.onrender.com',
+}
+
 </script>
 
 <style scoped>
