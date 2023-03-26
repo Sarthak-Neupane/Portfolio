@@ -12,8 +12,7 @@
                     Freelance Web Developer
                 </template>
                 <template #desc>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus facere inventore officiis
-                    reprehenderit laudantium unde sed modi non sint nemo!
+                    Worked as a freelance web developer through fiverr and upwork.
                 </template>
             </work-inner>
             <div class="h-[1px] w-full bg-purple"></div>
