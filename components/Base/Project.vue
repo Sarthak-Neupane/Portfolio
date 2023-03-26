@@ -29,13 +29,13 @@
                     <ul
                         class="flex justify-start items-center gap-5 text-xs sm:text-sm lg:text-base 2xl:text-lg 4xl:text-xl">
                         <li class="flex justify-center items-center gap-4"><a
-                                class="underline underline-offset-2 text-blue-600"
-                                :href="links.live" target="_blank" >Visit </a>
+                                class="underline underline-offset-2 text-blue-600" :href="links.live" target="_blank">Visit
+                            </a>
                             <Icon name="uil:globe" />
                         </li>
                         <li class="flex justify-center items-center gap-4"><a
-                                class="underline underline-offset-2 text-blue-600"
-                                :href="links.github" target="_blank" >Github</a>
+                                class="underline underline-offset-2 text-blue-600" :href="links.github"
+                                target="_blank">Github</a>
                             <Icon name="uil:github" />
                         </li>
                     </ul>
@@ -98,20 +98,11 @@
                 </div>
                 <div
                     class="w-full flex justify-between items-center border-solid border-t-[0px] border-dark -mt-3 py-5 font-semibold text-purple">
-                    <NuxtLink to="/work/ficfacfoe/" class="rounded-lg" @mouseover="hover" @mouseout="unhover">
+                    <NuxtLink :to="getNextRouteUrl()" class="rounded-lg"
+                        @mouseover="hover" @mouseout="unhover">
                         <button
                             class=" pointer-events-none w-full h-full px-8 py-5 relative overflow-hidden  border-[1px] border-solid border-purple rounded-lg">
-                            <Icon name="uil:arrow-left" class="mr-2">
-                            </Icon>
-                            <span>Chillflix</span>
-                            <div class="absolute top-full -translate-x-2 translate-y-2 left-0 h-[200%] rotate-6 w-[200%] -z-[1] rounded-lg bg-purple"
-                                data-element="first"> </div>
-                        </button>
-                    </NuxtLink>
-                    <NuxtLink to="/work/ficfacfoe/" class="rounded-lg" @mouseover="hover" @mouseout="unhover">
-                        <button
-                            class=" pointer-events-none w-full h-full px-8 py-5 relative overflow-hidden  border-[1px] border-solid border-purple rounded-lg">
-                            <span>Rooms</span>
+                            <span> {{ getNextRouteName() }} </span>
                             <Icon name="uil:arrow-right" class="ml-2" />
                             <div class="absolute top-full -translate-x-2 translate-y-2 left-0 h-[200%] rotate-6 w-[200%] -z-[1] rounded-lg bg-purple"
                                 data-element="second"> </div>
@@ -126,6 +117,10 @@
 <script setup>
 import { useWindowSize, useScroll, useElementBounding } from '@vueuse/core';
 import gsap from 'gsap';
+import { useRoute } from 'vue-router';
+
+
+const route = useRoute();
 
 const { width, height } = useWindowSize();
 
@@ -143,7 +138,7 @@ if (typeof window !== "undefined") {
 const { top } = useElementBounding(scrollToElement)
 
 
-defineProps({
+const props = defineProps({
     images: {
         type: Array,
         required: true
@@ -155,25 +150,63 @@ defineProps({
     largeImage: {
         type: Object,
         required: true
-    }
+    },
+    nextRoute: {
+        type: String,
+        required: true
+    },
 })
 
 const transition = useTransitionComposable()
 
 watch(() => transition.transitionState.transitionComplete, (val) => {
-    if (val && width.value >= 640) {
-        if (scroll.y.value === 0) {
+    if (val && width.value >= 1280) {
+        if (scroll.y.value == 0) {
             scroll.y.value = top.value - height.value
         }
         ctx.value = gsap.context(() => { }, scrollContainer.value)
     }
 })
 
+const getNextRouteUrl = () => {
+    switch (props.nextRoute) {
+        case 'ficfacfoe':
+            return '/work/ficfacfoe/'
+        case 'chillflix':
+            return '/work/chillflix/'
+        case 'rooms':
+            return '/work/rooms/'
+        case 'portfolio':
+            return '/work/portfolio/'
+        case 'more':
+            return '/work/more/'
+        default:
+            return '/work/ficfacfoe/'
+    }
+}
+
+const getNextRouteName = () => {
+    switch (props.nextRoute) {
+        case 'ficfacfoe':
+            return 'Ficfacfoe'
+        case 'chillflix':
+            return 'Chillflix'
+        case 'rooms':
+            return 'Rooms'
+        case 'portfolio':
+            return 'Secondary Portfolio'
+        case 'more':
+            return 'More Projects'
+        default:
+            return 'Ficfacfoe'
+    }
+}
+
 const playHoveredAnim = (el, parent) => {
     if (ctx.value) {
         ctx.value.add(
             gsap.to(el, { duration: .5, top: '-90%', ease: 'power4.out' }),
-            gsap.to(parent, { duration: .5, color: '#fffeff', ease: 'power4.out' })   
+            gsap.to(parent, { duration: .5, color: '#fffeff', ease: 'power4.out' })
         )
     }
 }
@@ -181,7 +214,7 @@ const playHoveredAnim = (el, parent) => {
 const unPlayHoveredAnim = (el, parent) => {
     if (ctx.value) {
         ctx.value.add(gsap.to(el, { duration: .5, top: '100%', ease: 'power4.out' }))
-        gsap.to(parent, { duration: .5, color: 'rgb(39 35 35)', ease: 'power4.out' })   
+        gsap.to(parent, { duration: .5, color: 'rgb(39 35 35)', ease: 'power4.out' })
     }
 }
 

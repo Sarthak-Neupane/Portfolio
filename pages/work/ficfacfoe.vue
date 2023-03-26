@@ -1,5 +1,5 @@
 <template>
-    <BaseProject :images="images" :links="links" :largeImage="largeImage">
+    <BaseProject nextRoute="chillflix" :images="images" :links="links" :largeImage="largeImage">
         <template #title>FICFACFOE</template>
         <template #subtitle>A multiplayer Football-Transfers based game</template>
         <template #stack1>VUE/NUXT</template>
@@ -136,15 +136,16 @@ const links = {
         font-size: medium;
     }
 }
+
 @media screen and (min-width: 2160px) {
     .third {
         font-size: large;
     }
 }
+
 @media screen and (min-width: 3840px) {
     .third {
         font-size: 1.25rem;
     }
 }
-
 </style>

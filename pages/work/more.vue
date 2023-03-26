@@ -1,5 +1,5 @@
 <template>
-    <BaseMore :large-image="largeImage" :projects="allProjects"></BaseMore>
+    <BaseMore :large-image="largeImage" :projects="allProjects" ></BaseMore>
 </template>
 
 <script setup>

@@ -41,17 +41,7 @@
                     <NuxtLink to="/work/ficfacfoe/" class="rounded-lg" @mouseover="hover" @mouseout="unhover">
                         <button
                             class=" pointer-events-none w-full h-full px-8 py-5 relative overflow-hidden  border-[1px] border-solid border-purple rounded-lg">
-                            <Icon name="uil:arrow-left" class="mr-2">
-                            </Icon>
-                            <span>Chillflix</span>
-                            <div class="absolute top-full -translate-x-2 translate-y-2 left-0 h-[200%] rotate-6 w-[200%] -z-[1] rounded-lg bg-purple"
-                                data-element="first"> </div>
-                        </button>
-                    </NuxtLink>
-                    <NuxtLink to="/work/ficfacfoe/" class="rounded-lg" @mouseover="hover" @mouseout="unhover">
-                        <button
-                            class=" pointer-events-none w-full h-full px-8 py-5 relative overflow-hidden  border-[1px] border-solid border-purple rounded-lg">
-                            <span>Rooms</span>
+                            <span>Ficfacfoe</span>
                             <Icon name="uil:arrow-right" class="ml-2" />
                             <div class="absolute top-full -translate-x-2 translate-y-2 left-0 h-[200%] rotate-6 w-[200%] -z-[1] rounded-lg bg-purple"
                                 data-element="second"> </div>
@@ -75,7 +65,11 @@ defineProps({
     projects: {
         type: Array,
         required: true
-    }
+    },
+    nextRoute : {
+        type: String,
+        required: true
+    },
 })
 
 const { width, height } = useWindowSize();

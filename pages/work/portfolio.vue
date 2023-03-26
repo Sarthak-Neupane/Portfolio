@@ -1,5 +1,5 @@
 <template>
-    <BaseProject :images="images" :links="links" :largeImage="largeImage">
+    <BaseProject nextRoute="more" :images="images" :links="links" :largeImage="largeImage">
         <template #title>Secondary Portfolio</template>
         <template #subtitle>My Previous Portfolio</template>
         <template #stack1>JAVASCRIPT</template>
