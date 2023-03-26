@@ -38,8 +38,7 @@ const largeImage = {
 }
 
 const links = {
-    github: 'https://github.com/Sarthak-Neupane/NetFlixClone',
-    live: 'https://netflixclonefirst.web.app/home',
+    github: 'https://github.com/Sarthak-Neupane/Rooms',
 }
 
 </script>
