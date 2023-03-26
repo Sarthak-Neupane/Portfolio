@@ -36,7 +36,7 @@
             </NuxtLink>
         </div>
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit   px-1 contentBox">
-            <NuxtLink to="/work/ficfacfoe/" class="w-full h-full aspect-square flex justify-center items-center">
+            <NuxtLink to="/work/more/" class="w-full h-full aspect-square flex justify-center items-center">
                 <nuxt-img provider="storyblok" :src="getImageUrl('others')" fit="in"
                     :modifiers="{ filters: { fill: 'transparent' } }" alt="OTHERS"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Image5" data-hover="5" data-name="OTHERS"
