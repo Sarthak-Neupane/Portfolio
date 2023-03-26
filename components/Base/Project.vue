@@ -1,14 +1,15 @@
 <template>
-    <section class="flex justify-center items-center flex-col gap-5">
+    <section class="flex justify-center items-center flex-col gap-5" ref="scrollContainer">
         <ClientOnly>
             <template #fallback>
-                image                
+                image
             </template>
             <div class="h-[90vh] max-h-[90vh] w-full" v-if="width >= 1280">
                 <img src="/ficfacfoe/large.jpg" class="h-full w-full object-cover" alt="">
             </div>
         </ClientOnly>
-        <div class="xl:max-w-screen-lg 2xl:max-w-screen-xl 4xl:max-w-screen-2xl 6xl:max-w-screen-4xl mx-auto px-2 lg:px-5 flex flex-col justify-start items-start gap-7">
+        <div
+            class="xl:max-w-screen-lg 2xl:max-w-screen-xl 4xl:max-w-screen-2xl 6xl:max-w-screen-4xl mx-auto px-2 lg:px-5 flex flex-col justify-start items-start gap-7">
             <div>
                 <NuxtLink to="/">
                     <button class="text-purple font-bold text-xs sm:text-sm lg:text-base 2xl:text-lg 4xl:text-xl">
@@ -25,7 +26,8 @@
                     <h2 class="text-xs sm:text-base xl:text-lg 4xl:text-xl 6xl:text-2xl my-2 lg:my-5 font-medium">
                         <slot name="subtitle"></slot>
                     </h2>
-                    <ul class="flex justify-start items-center gap-5 text-xs sm:text-sm lg:text-base 2xl:text-lg 4xl:text-xl">
+                    <ul
+                        class="flex justify-start items-center gap-5 text-xs sm:text-sm lg:text-base 2xl:text-lg 4xl:text-xl">
                         <li class="flex justify-center items-center gap-4"><a
                                 class="underline underline-offset-2 text-blue-600"
                                 href="https://ficfacfoe.onrender.com">Visit </a>
@@ -55,7 +57,7 @@
                         </li>
                     </ul>
                 </div>
-                <div>
+                <div ref="scrollToElement">
                     <ProjectsTitle>Overview</ProjectsTitle>
                     <ProjectsParagraph>
                         <slot name="overview">
@@ -105,14 +107,38 @@
 </template>
 
 <script setup>
-import { useWindowSize } from '@vueuse/core';
+import { useWindowSize, useScroll, useElementBounding  } from '@vueuse/core';
 
-const { width } = useWindowSize();
+const { width, height } = useWindowSize();
+
+const scrollContainer = ref(null)
+const scrollToElement = ref(null)
+
+let scroll;
+
+if (typeof window !== "undefined") {
+    scroll = useScroll(window, { behavior: 'smooth' })
+    console.log(scroll)
+}
+
+const { x, y, top, right, bottom, left } = useElementBounding(scrollToElement)
+
 
 defineProps({
     images: {
         type: Array,
         required: true
+    }
+})
+
+const transition = useTransitionComposable()
+
+watch(() => transition.transitionState.transitionComplete, (val) => {
+    if (val && width.value >= 1280) {
+        console.log('transition complete')
+        if(scroll.y.value === 0){
+            scroll.y.value = top.value - height.value
+        }
     }
 })
 
