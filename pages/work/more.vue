@@ -26,7 +26,7 @@ definePageMeta({
 })
 
 const largeImage = {
-    src: '/others/large.jpg',
+    src: '/images/others/large.jpg',
     alt: 'others',
 }
 

@@ -101,25 +101,25 @@ definePageMeta({
 
 const images = [
     {
-        src: '/chillflix/large.jpg',
+        src: '/images/chillflix/large.jpg',
         alt: 'chillflix',
     },
     {
-        src: '/ficfacfoe/large.jpg',
+        src: '/images/ficfacfoe/large.jpg',
         alt: 'ficfacfoe',
     },
     {
-        src: '/rooms/large.jpg',
+        src: '/images/rooms/large.jpg',
         alt: 'rooms',
     },
     {
-        src: '/others/large.jpg',
+        src: '/images/others/large.jpg',
         alt: 'others',
     },
 ]
 
 const largeImage = {
-    src: '/ficfacfoe/large.jpg',
+    src: '/images/ficfacfoe/large.jpg',
     alt: 'ficfacfoe',
 }
 

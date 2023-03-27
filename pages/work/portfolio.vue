@@ -40,7 +40,7 @@ definePageMeta({
 const images = []
 
 const largeImage = {
-    src: '/portfolio/large.jpg',
+    src: '/images/portfolio/large.jpg',
     alt: 'portfolio',
 }
 

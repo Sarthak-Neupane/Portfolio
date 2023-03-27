@@ -51,7 +51,7 @@ definePageMeta({
 const images = []
 
 const largeImage = {
-    src: '/rooms/large.jpg',
+    src: '/images/rooms/large.jpg',
     alt: 'rooms',
 }
 

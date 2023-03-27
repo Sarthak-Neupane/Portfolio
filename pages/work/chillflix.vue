@@ -49,7 +49,7 @@ definePageMeta({
 const images = []
 
 const largeImage = {
-    src: '/chillflix/large.jpg',
+    src: '/images/chillflix/large.jpg',
     alt: 'chillflix',
 }
 
