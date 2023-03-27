@@ -4,6 +4,22 @@
 
 <script setup>
 import transitionConfig from '@/helpers/transition';
+
+useSeoMeta({
+   title: 'More Projects',
+   ogTitle: 'Work | More Projects',
+   description: "A collection of various small projects Sarthak Neupane built with various tech stacks. From Three JS to Barba JS to Vue JS, there's a lot to explore. The projects are hosted on Netlify. The source code is available on Github, and there is also a link to the live site. ",
+   ogDescription: "My collection of small projects built with various tech stacks",
+})
+
+
+defineOgImageStatic({
+   component: 'MyOgImage',
+   title: 'Work | Sarthak Neupane',
+   content: 'Frontend Developer - Vuejs | Nuxtjs',
+   backgroundColor: 'bg-[#9E4770]',
+})
+
 definePageMeta({
     name: 'more',
     pageTransition: transitionConfig,
