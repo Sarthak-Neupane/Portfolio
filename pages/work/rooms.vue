@@ -25,6 +25,24 @@
 
 <script setup>
 import transitionConfig from '@/helpers/transition';
+
+
+useSeoMeta({
+   title: 'Rooms',
+   ogTitle: 'Work | Rooms',
+   description: "Rooms is a lightweight project management tool built with Vue, Tailwind, and Firebase. It allows users to create and join rooms, add friends, switch the room type from shared to private, and much more. Each room consists of a chat, member-list, files, reminders (to-do's).",
+   ogDescription: "A lightweight Project Management tool, built with Vue, Tailwind, and Firebase.",
+})
+
+
+defineOgImageStatic({
+   component: 'MyOgImage',
+   title: 'Work | Sarthak Neupane',
+   content: 'Frontend Developer - Vuejs | Nuxtjs',
+   backgroundColor: 'bg-[#9E4770]',
+})
+
+
 definePageMeta({
     name: 'rooms',
     pageTransition: transitionConfig,
