@@ -66,10 +66,6 @@ defineProps({
         type: Array,
         required: true
     },
-    nextRoute : {
-        type: String,
-        required: true
-    },
 })
 
 const { width, height } = useWindowSize();

@@ -16,7 +16,7 @@
 import { useClipboard } from '@vueuse/core';
 
 const source = ref('hello@sarthakneupane.com')
-const { text, copy, copied, isSupported } = useClipboard({ source: source, copiedDuring: 5000 })
+const { text, copy, copied, isSupported } = useClipboard({ copiedDuring: 3000 })
 
 </script>
 
