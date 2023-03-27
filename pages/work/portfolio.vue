@@ -46,7 +46,7 @@ const largeImage = {
 
 const links = {
     github: 'https://github.com/Sarthak-Neupane/Portfolio2',
-    live: 'https://sarthakneupane.com.np/',
+    live: 'https://sarthakneupane.netlify.app',
 }
 
 </script>
