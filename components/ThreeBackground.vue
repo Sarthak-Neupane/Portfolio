@@ -1,10 +1,9 @@
-<template>
+<!-- <template>
     <div class="fixed top-0 left-0 -z-10 h-screen w-full" ref="threeElem">
     </div>
 </template>
 
 <script setup>
-import { toNumber } from '@vue/shared';
 import { useWindowSize, useDevicePixelRatio, useRafFn } from '@vueuse/core'
 
 import fragmentShader from '~/shaders/fragment.glsl'
@@ -91,4 +90,4 @@ useRafFn(() => {
     time.value += 0.01
     renderer.value.render(scene, camera)
 })
-</script>
+</script> -->

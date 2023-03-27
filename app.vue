@@ -10,12 +10,6 @@
           <Logo />
         </div>
       </div>
-      <!-- <ClientOnly>
-        <template #fallback>
-          <p>Loading Three...</p>
-        </template>
-        <three-background> </three-background>
-      </ClientOnly> -->
       <div class="flex-grow w-full">
         <nuxt-page :transition="{
           name: 'page-transiton',

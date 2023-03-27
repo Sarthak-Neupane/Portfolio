@@ -1,8 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import glsl from "vite-plugin-glsl";
+// import glsl from "vite-plugin-glsl";
 export default defineNuxtConfig({
   build: {
-    transpile: ["gsap", "three"],
+    transpile: ["gsap"],
+    // transpile: ["gsap", "three"],
   },
   extends: ["nuxt-seo-kit"],
   runtimeConfig: {
@@ -67,20 +68,20 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "nuxt-icon",
   ],
-  vite: {
-    plugins: [
-      glsl({
-        include: [
-          "**/*.glsl",
-          "**/*.wgsl",
-          "**/*.vert",
-          "**/*.frag",
-          "**/*.vs",
-          "**/*.fs",
-        ],
-      }),
-    ],
-  },
+  // vite: {
+  //   plugins: [
+  //     glsl({
+  //       include: [
+  //         "**/*.glsl",
+  //         "**/*.wgsl",
+  //         "**/*.vert",
+  //         "**/*.frag",
+  //         "**/*.vs",
+  //         "**/*.fs",
+  //       ],
+  //     }),
+  //   ],
+  // },
   pinia: {
     autoImports: [
       // automatically imports `defineStore`
@@ -104,16 +105,12 @@ export default defineNuxtConfig({
     }
   },
   linkChecker: {
-    failOn404: false,
+    failOn404: true,
   },
   devServer: {
     https: {
       key: "localhost-key.pem",
       cert: "localhost.pem",
     },
-  },
-  nitro: {
-    // serveStatic: true,
-    // preset: "vercel-static",
   },
 });

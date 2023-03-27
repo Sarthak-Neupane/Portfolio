@@ -27,8 +27,7 @@
     "@storyblok/nuxt": "^5.3.0",
     "@vueuse/core": "^9.13.0",
     "gsap": "^3.11.5",
-    "pinia": "^2.0.33",
-    "three": "^0.150.1"
+    "pinia": "^2.0.33"
   },
   "overrides": {
     "vue": "latest"
