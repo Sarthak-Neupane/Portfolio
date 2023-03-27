@@ -76,6 +76,9 @@
 
 <script setup>
 import transitionConfig from '@/helpers/transition';
+
+
+
 definePageMeta({
     name: 'ficfacfoe',
     pageTransition: transitionConfig,

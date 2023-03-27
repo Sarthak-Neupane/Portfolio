@@ -23,6 +23,24 @@
 
 <script setup>
 import transitionConfig from '@/helpers/transition';
+
+
+useSeoMeta({
+   title: 'Chillflix',
+   ogTitle: 'Work | Chillflix',
+   description: 'Chillflix is similar to what you call as "Netflix". This is a completely working project with features including searching for movies and TV shows, dynamic routing, filtering movies/tv by popularity and ratings, creating a personal list, and much more. The website also connects to Google Firebase for Authentication and Database.',
+   ogDescription: 'Chillflix, a Netflix clone made with Vuejs, Firebase, and Tailwindcss.',
+})
+
+
+defineOgImageStatic({
+   component: 'MyOgImage',
+   title: 'Work | Sarthak Neupane',
+   content: 'Frontend Developer - Vuejs | Nuxtjs',
+   backgroundColor: 'bg-[#9E4770]',
+})
+
+
 definePageMeta({
     name: 'chillflix',
     pageTransition: transitionConfig,
