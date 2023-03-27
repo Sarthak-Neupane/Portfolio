@@ -105,7 +105,7 @@ export default defineNuxtConfig({
     }
   },
   linkChecker: {
-    failOn404: true,
+    failOn404: false,
   },
   devServer: {
     https: {

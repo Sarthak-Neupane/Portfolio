@@ -76,7 +76,7 @@ const allProjects = [
         description: 'Uses Three js, gsap, and a few other libraries to create my first portfolio website',
         links: {
             github: null,
-            live: 'https://portfoliodemonow.netlify.app/home',
+            live: 'https://portfoliodemonow.netlify.app',
         }
     },
 ]
