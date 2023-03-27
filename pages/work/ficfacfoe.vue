@@ -101,20 +101,28 @@ definePageMeta({
 
 const images = [
     {
-        src: '/images/chillflix/large.jpg',
-        alt: 'chillflix',
+        src: '/ficfacfoe/HomePage.png',
+        alt: 'Home Page',
     },
     {
-        src: '/images/ficfacfoe/large.jpg',
-        alt: 'ficfacfoe',
+        src: '/ficfacfoe/BeforeStart.png',
+        alt: 'Before Game Started',
     },
     {
-        src: '/images/rooms/large.jpg',
-        alt: 'rooms',
+        src: '/ficfacfoe/Started.png',
+        alt: 'Game Started'
     },
     {
-        src: '/images/others/large.jpg',
-        alt: 'others',
+        src: '/ficfacfoe/GuessOne.png',
+        alt: 'Making A Guess',
+    },
+    {
+        src: '/ficfacfoe/CorrectGuess.png',
+        alt: 'Guess Is Correct',
+    },
+    {
+        src: '/ficfacfoe/AfterEnd.png',
+        alt: 'Game Ended',
     },
 ]
 

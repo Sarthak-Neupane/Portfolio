@@ -79,22 +79,25 @@
                         <slot name="para2">
                         </slot>
                     </ProjectsParagraph>
-
+                    <ProjectsImage :src="images[1]?.src" class="my-5" alt="Image One" />
                     <ProjectsParagraph>
                         <slot name="para3"></slot>
                     </ProjectsParagraph>
-                    <ProjectsImage :src="images[1]?.src" class="my-5" alt="Image One" />
+                    <ProjectsImage :src="images[2]?.src" class="my-5" alt="Image One" />
                     <ProjectsParagraph>
                         <slot name="para4"></slot>
                     </ProjectsParagraph>
+                    <ProjectsImage :src="images[3]?.src" class="my-5" alt="Image One" />
                     <ProjectsParagraph>
                         <slot name="para5">
                         </slot>
                     </ProjectsParagraph>
+                    <ProjectsImage :src="images[4]?.src" class="my-5" alt="Image One" />
                     <ProjectsParagraph>
                         <slot name="para6">
                         </slot>
                     </ProjectsParagraph>
+                    <ProjectsImage :src="images[5]?.src" class="my-5" alt="Image One" />
                 </div>
                 <div
                     class="w-full flex justify-between items-center border-solid border-t-[0px] border-dark -mt-3 py-5 font-semibold text-purple">
