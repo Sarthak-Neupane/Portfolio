@@ -28,10 +28,9 @@ import transitionConfig from '@/helpers/transition';
 useSeoMeta({
    title: 'Chillflix',
    ogTitle: 'Work | Chillflix',
-   description: 'Chillflix is similar to what you call as "Netflix". This is a completely working project with features including searching for movies and TV shows, dynamic routing, filtering movies/tv by popularity and ratings, creating a personal list, and much more. The website also connects to Google Firebase for Authentication and Database.',
+   description: 'Chillflix is similar to "Netflix". This is a working project with features including searching for movies/TV, dynamic routing, filtering movies/tv by popularity and ratings, creating a personal list, and more. The website also connects to Google Firebase for Authentication and Database.',
    ogDescription: 'Chillflix, a Netflix clone made with Vuejs, Firebase, and Tailwindcss.',
 })
-
 
 defineOgImageStatic({
    component: 'MyOgImage',
