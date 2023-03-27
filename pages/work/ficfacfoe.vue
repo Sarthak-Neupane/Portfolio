@@ -78,6 +78,21 @@
 import transitionConfig from '@/helpers/transition';
 
 
+useSeoMeta({
+   title: 'Ficfacfoe',
+   ogTitle: 'Work | Ficfacfoe',
+   description: "Ficfacfoe is a Tic-Tac-Toe styled football transfers themed game. Currently deployed on render, it is a multiplayer game where you can play with your friends. It is a real-time game where you can see your opponent's move as soon as he makes it. It is a turn-based game where you can only make a move when it is your turn. It is a responsive game which means you can play it on your mobile phone as well.",
+   ogDescription: 'Ficfacfoe, a multiplayer tic-tac-toe styled football transfers themed game.',
+})
+
+
+defineOgImageStatic({
+   component: 'MyOgImage',
+   title: 'Work | Sarthak Neupane',
+   content: 'Frontend Developer - Vuejs | Nuxtjs',
+   backgroundColor: 'bg-[#9E4770]',
+})
+
 
 definePageMeta({
     name: 'ficfacfoe',
