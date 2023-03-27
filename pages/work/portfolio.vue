@@ -15,6 +15,23 @@
 
 <script setup>
 import transitionConfig from '@/helpers/transition';
+
+useSeoMeta({
+   title: 'Portfolio',
+   ogTitle: 'Work | Portfolio',
+   description: "This was a portfolio site I built a while ago. The project was built using vanilla JS and Three JS (with shaders). The site uses Barba JS for page transitions. The site contains three sites, with all of them containing distinct shaders animations. The site is hosted on Netlify.",
+   ogDescription: 'Secondary Portfolio, My previous personal site.',
+})
+
+
+defineOgImageStatic({
+   component: 'MyOgImage',
+   title: 'Work | Sarthak Neupane',
+   content: 'Frontend Developer - Vuejs | Nuxtjs',
+   backgroundColor: 'bg-[#9E4770]',
+})
+
+
 definePageMeta({
     name: 'portfolio',
     pageTransition: transitionConfig,
