@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 // import glsl from "vite-plugin-glsl";
 export default defineNuxtConfig({
+  plugins: [{ src: "~/plugins/vercel.js", mode: "client" }],
   build: {
     transpile: ["gsap"],
     // transpile: ["gsap", "three"],
@@ -101,8 +102,8 @@ export default defineNuxtConfig({
       "6xl": 3840,
     },
     storyblok: {
-      baseURL: 'https://a.storyblok.com'
-    }
+      baseURL: "https://a.storyblok.com",
+    },
   },
   linkChecker: {
     failOn404: false,
