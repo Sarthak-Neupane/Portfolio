@@ -32,7 +32,7 @@
             v-if="getWidth > 648">
             <h1 class="sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-purple text-center relative"
                @mouseenter="hovered" @mouseleave="unHovered" ref="email">
-               <a href="mailto:hello@sarthakneupane.com" target="_blank">hello@sarthakneupane.com
+               <a href="mailto:2004neupane@gmail.com" target="_blank">2004neupane@gmail.com
                   <Icon name="uil:external-link-alt" size="20px" />
                </a>
                <div class="absolute top-full -translate-y-full left-0 h-1 w-0 bg-green" id="underline" ref="underline">
