@@ -1,5 +1,5 @@
 <template>
-    <BaseProject nextRoute="portfolio" :images="images" :links="links" :largeImage="largeImage" >
+    <BaseProject nextRoute="rubiks" :images="images" :links="links" :largeImage="largeImage" >
         <template #title>Rooms</template>
         <template #subtitle>A lightweight Project Management tool</template>
         <template #stack1>VUE/VITE</template>

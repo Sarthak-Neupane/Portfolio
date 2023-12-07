@@ -10,11 +10,11 @@
             </NuxtLink>
         </div>
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit  px-1 contentBox">
-            <NuxtLink to="/work/portfolio/" class="w-full h-full aspect-square flex justify-center items-center">
-                <nuxt-img provider="storyblok" :src="getImageUrl('portfolio')" alt="PORTFOLIO" fit="in"
+            <NuxtLink to="/work/rubiks/" class="w-full h-full aspect-square flex justify-center items-center">
+                <nuxt-img provider="storyblok" :src="getImageUrl('cube')" alt="CUBE SIMULATOR" fit="in"
                     :modifiers="{ filters: { fill: 'transparent' } }"
                     class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Image2" data-hover="2"
-                    data-name="PORTFOLIO" @mouseenter="hoverImage" @mouseout="unHoverImage"
+                    data-name="CUBE" @mouseenter="hoverImage" @mouseout="unHoverImage"
                     sizes="xl:25vw 2xl:25vw 4xl:25vw" />
             </NuxtLink>
         </div>
@@ -58,8 +58,8 @@ const getImageUrl = (name) => {
     switch (name) {
         case 'ficfacfoe':
             return 'https://a.storyblok.com/f/209045/1200x1200/efeded8a8b/ficfacfoe.jpg'
-        case 'portfolio':
-            return 'https://a.storyblok.com/f/209045/1200x1200/9e77745f5d/portfolio.jpg'
+        case 'cube':
+            return 'https://a.storyblok.com/f/209045/1200x1200/4f95b81619/rubiks.jpg'
         case 'rooms':
             return 'https://a.storyblok.com/f/209045/1200x1200/ca79517d3c/rooms.jpg'
         case 'chillflix':
