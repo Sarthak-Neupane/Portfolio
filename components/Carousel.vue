@@ -27,6 +27,15 @@
             </NuxtLink>
         </div>
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit   px-1 contentBox">
+            <NuxtLink to="/work/portfolio/" class="w-full h-full aspect-square flex justify-center items-center">
+                <nuxt-img provider="storyblok" :src="getImageUrl('portfolio')" alt="PORTFOLIO" fit="in"
+                    :modifiers="{ filters: { fill: 'transparent' } }"
+                    class="aspect-square xl:grayscale h-full xl:aspect-auto" ref="Imag4" data-hover="4"
+                    data-name="PORTFOLIO" @mouseenter="hoverImage" @mouseout="unHoverImage"
+                    sizes="xl:25vw 2xl:25vw 4xl:25vw" />
+            </NuxtLink>
+        </div>
+        <!-- <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit   px-1 contentBox">
             <NuxtLink to="/work/chillflix/" class="w-full h-full aspect-square flex justify-center items-center">
                 <nuxt-img provider="storyblok" :src="getImageUrl('chillflix')" alt="CHILLFLIX" fit="in"
                     :modifiers="{ filters: { fill: 'transparent' } }"
@@ -34,7 +43,7 @@
                     data-name="CHILLFLIX" @mouseenter="hoverImage" @mouseout="unHoverImage"
                     sizes="xl:25vw 2xl:25vw 4xl:25vw" />
             </NuxtLink>
-        </div>
+        </div> -->
         <div class="flex-none xl:flex-initial flex justify-center items-center h-full w-full min-w-fit   px-1 contentBox">
             <NuxtLink to="/work/more/" class="w-full h-full aspect-square flex justify-center items-center">
                 <nuxt-img provider="storyblok" :src="getImageUrl('others')" fit="in"
@@ -66,6 +75,8 @@ const getImageUrl = (name) => {
             return 'https://a.storyblok.com/f/209045/1200x1200/29c9a713bf/chillflix.jpg'
         case 'others':
             return 'https://a.storyblok.com/f/209045/1200x1200/e261a24b47/others.jpg'
+        case 'portfolio':
+            return 'https://a.storyblok.com/f/209045/1200x1200/9e77745f5d/portfolio.jpg'
     }
 }
 

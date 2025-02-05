@@ -1,5 +1,5 @@
 <template>
-    <BaseProject nextRoute="chillflix" :images="images" :links="links" :largeImage="largeImage">
+    <BaseProject nextRoute="portfolio" :images="images" :links="links" :largeImage="largeImage">
         <template #title>FICFACFOE</template>
         <template #subtitle>A multiplayer Football-Transfers based game</template>
         <template #stack1>VUE/NUXT</template>
